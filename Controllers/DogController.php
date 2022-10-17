@@ -2,11 +2,9 @@
 
     namespace Controllers;
 
-    use DAO\dogDAO;
-    use Models\dog;
     use DAO\DogDAO;
     use Models\Dog;
-   
+    
 
     class DogController {
         private $dogDAO;
