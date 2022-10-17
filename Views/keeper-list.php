@@ -12,7 +12,7 @@
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>">ADD OWNER</a></li>
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowListView"?>">LIST/ REMOVE OWNER</a></li>
         <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>">ADD KEEPER</a></li>
-        <li><a href="<?php echo FRONT_ROOT . "BeerType/ShowListView"?>">LIST/ REMOVE KEEPER</a></li>
+        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>">LIST/ REMOVE KEEPER</a></li>
       </ul>
     </div>
   </div>
@@ -41,19 +41,19 @@
           <tbody>
 
           <?php
-            sort($kepperList);
+           
             foreach($keeperList as $keeper) {
           ?>
             <tr>
-                <td><?php echo $Keeper->getIdKeeper() ?></td>
-                <td><?php echo $Keeper->getNamePerson() ?></td>
-                <td><?php echo $Keeper->getLastnamePerson() ?></td>
-                <td><?php echo $Keeper->getDni() ?></td>
-                <td><?php echo $Keeper->getEmail() ?></td>
-                <td><?php echo $Keeper->getAddress() ?></td>
-                <td><?php echo $Keeper->getCellphone() ?></td>
-                <td><?php echo $Keeper->getDogType() ?></td>
-                <td><?php echo $Keeper->getPriceXDay() ?></td>
+                <td><?php echo $keeper->getIdKeeper() ?></td>
+                <td><?php echo $keeper->getNamePerson() ?></td>
+                <td><?php echo $keeper->getLastnamePerson() ?></td>
+                <td><?php echo $keeper->getDni() ?></td>
+                <td><?php echo $keeper->getEmail() ?></td>
+                <td><?php echo $keeper->getAddress() ?></td>
+                <td><?php echo $keeper->getCellphone() ?></td>
+                <td><?php echo $keeper->getDogType() ?></td>
+                <td><?php echo $keeper->getPriceXDay() ?></td>
                 <td>
                   <button type="submit" name="idKeeper" class="btn" value="<?php echo $keeper->getIdKeeper() ?>"> Remove </button>
                   <a href="<?php echo FRONT_ROOT . "Keeper/ShowModifyView/" . $keeper->getIdKeeper() ?>" class="btn"> Modify </a>

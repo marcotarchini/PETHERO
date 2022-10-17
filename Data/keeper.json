@@ -1,0 +1,15 @@
+[
+    {
+        "namePerson":"Marco",
+        "lastnamePerson":"Tarchini",
+        "dni":"29909079",
+        "email":"tarchinimarco@gmail.com",
+        "address":"F U Camet 2309",
+        "cellphone":"2235516482",
+        "idKeeper":"1",
+        "passKeeper":"1234",
+        "dogType":"Grande",
+        "priceXDay":"1000",
+        "score":"25"
+    }
+]

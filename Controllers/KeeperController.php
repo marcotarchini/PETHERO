@@ -9,7 +9,7 @@
         private $keeperDAO;
 
         public function __construct() {
-            $this->keeperDAO = new keeperDAO();
+            $this->keeperDAO = new KeeperDAO();
         }
 
         public function ShowAddView() {

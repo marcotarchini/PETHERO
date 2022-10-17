@@ -15,7 +15,7 @@ use DAO\DogDAO;
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>">ADD OWNER</a></li>
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowListView"?>">LIST/ REMOVE OWNER</a></li>
         <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>">ADD KEEPER</a></li>
-        <li><a href="<?php echo FRONT_ROOT . "BeerType/ShowListView"?>">LIST/ REMOVE KEEPER</a></li>
+        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>">LIST/ REMOVE KEEPER</a></li>
       </ul>
     </div>
   </div>
@@ -37,6 +37,7 @@ use DAO\DogDAO;
                 <th>Address</th>
                 <th>Cellphone</th>
                 <th>Dog</th>
+                <th>Service</th>
               </tr>
             </thead>
             <tbody align="center">
@@ -77,6 +78,9 @@ use DAO\DogDAO;
                       ?>
 
                     </select>
+                </td>
+                <td>
+                  <input type="text" name="service" required>
                 </td>   
                     
               </tr>

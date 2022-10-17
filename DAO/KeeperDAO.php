@@ -2,7 +2,8 @@
 
     namespace DAO;
 
-    use Models\Keeper;
+    use DAO\IKeeperDAO as IKeeperDAO;
+    use Models\Keeper as Keeper;
 
     class KeeperDAO implements IKeeperDAO {
         
@@ -63,6 +64,8 @@
                 return $keeper->getEmail() === $email;
             });
 
+            $aux= array_values($aux);
+
             return (count($aux) > 0) ? $aux[0] : null;
         }
 
@@ -95,11 +98,11 @@
                 $arrayDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
 
                 foreach($arrayDecode as $value) {
-                    $keeper = new Keeper();
+                    $keeper = new keeper();
                     $keeper->setIdKeeper($value["idKeeper"]);
                     $keeper->setPassKeeper($value["passKeeper"]);
                     $keeper->setNamePerson($value["namePerson"]);
-                    $keeper->setLastnamePerson()($value["lastnamePerson"]);
+                    $keeper->setLastnamePerson($value["lastnamePerson"]);
                     $keeper->setDni($value["dni"]);
                     $keeper->setEmail($value["email"]);
                     $keeper->setAddress($value["address"]);

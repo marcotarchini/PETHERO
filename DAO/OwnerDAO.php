@@ -2,10 +2,11 @@
 
     namespace DAO;
 
-    use Models\Owner;
+    use DAO\IOwnerDAO as IOwnerDAO;
+    use Models\Owner as Owner;
 
     class OwnerDAO implements IOwnerDAO {
-        private $fileName = ROOT . "/Data/Owner.json";
+        private $fileName = ROOT . "/Data/owner.json";
         private $ownerList = array();
 
         public function Add($owner) {
@@ -62,6 +63,8 @@
                 return $owner->getEmail() === $email;
             });
 
+            $aux= array_values($aux);
+
             return (count($aux) > 0) ? $aux[0] : null;
         }
 
@@ -76,7 +79,7 @@
                 $value["dni"] = $owner->getDni();
                 $value["email"] = $owner->getEmail();
                 $value["address"] = $owner->getAddress();
-                $value["owner"] = $owner->getowner();
+                $value["cellphone"] = $owner->getCellphone();
                 $value["dog"] = $owner->getDog();
                 $value["service"] = $owner->getService();
 
@@ -94,15 +97,15 @@
                 $arrayDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
 
                 foreach($arrayDecode as $value) {
-                    $owner = new Owner();
+                    $owner = new owner();
                     $owner->setIdOwner($value["idOwner"]);
                     $owner->setPassOwner($value["passOwner"]);
                     $owner->setNamePerson($value["namePerson"]);
-                    $owner->setLastnamePerson()($value["lastnamePerson"]);
+                    $owner->setLastnamePerson($value["lastnamePerson"]);
                     $owner->setDni($value["dni"]);
                     $owner->setEmail($value["email"]);
                     $owner->setAddress($value["address"]);
-                    $owner->setowner($value["owner"]);
+                    $owner->setCellphone($value["cellphone"]);
                     $owner->setDog($value["dog"]);
                     $owner->setService($value["service"]);
                     

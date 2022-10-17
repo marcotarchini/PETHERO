@@ -10,7 +10,7 @@
         private $dogDAO;
 
         public function __construct() {
-            $this->dogDAO = new dogDAO();
+            $this->dogDAO = new DogDAO();
         }
 
         public function ShowAddView($message = "") {

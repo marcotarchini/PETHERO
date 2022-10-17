@@ -10,17 +10,21 @@ use DAO\OwnerDAO;
         private $ownerDAO;
 
         public function __construct() {
-            $this->keeperDAO = new keeperDAO();
-            $this->ownerDAO = new ownerDAO();
+            $this->keeperDAO = new KeeperDAO();
+            $this->ownerDAO = new OwnerDAO();
         }
 
         public function Index($message = "") {
             require_once(VIEWS_PATH . "home.php");
         }
 
-        public function ShowAddView() {
+        public function ShowAddViewO() {
             require_once(VIEWS_PATH . "validate-session.php");
             require_once(VIEWS_PATH . "add-keeper.php");
+        }
+
+        public function ShowAddViewK() {
+            require_once(VIEWS_PATH . "validate-session.php");
             require_once(VIEWS_PATH . "add-owner.php");
         }
 
@@ -28,15 +32,12 @@ use DAO\OwnerDAO;
             $keeper = $this->keeperDAO->GetByEmail($email);
             $owner = $this->ownerDAO->GetByEmail($email);
 
-            if(($keeper != null) && ($keeper->getPassKeeper() === $passKeeper)) {
+            if(($keeper != null) && ($keeper->getPassKeeper() === $password)) {
                 $_SESSION["loggedUser"] = $keeper;
-                $this->ShowAddView();
-            } else {
-                $this->Index("Email y/o contraseña incorrecta");
-            }
-            if(($owner != null) && ($owner->getPassOwner() === $passOwner)) {
+                $this->ShowAddViewK();
+            } else if(($owner != null) && ($owner->getPassOwner() === $password)) {
                 $_SESSION["loggedUser"] = $owner;
-                $this->ShowAddView();
+                $this->ShowAddViewO();
             } else {
                 $this->Index("Email y/o contraseña incorrecta");
             }

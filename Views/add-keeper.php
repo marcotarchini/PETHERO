@@ -12,7 +12,7 @@
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>">ADD OWNER</a></li>
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowListView"?>">LIST/ REMOVE OWNER</a></li>
         <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>">ADD KEEPER</a></li>
-        <li><a href="<?php echo FRONT_ROOT . "BeerType/ShowListView"?>">LIST/ REMOVE KEEPER</a></li>
+        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>">LIST/ REMOVE KEEPER</a></li>
       </ul>
     </div>
   </div>
@@ -69,14 +69,14 @@
           <div>
             <input type="submit" class="btn" value="Agregar" style="background-color:#DC8E47;color:white;"/>
           </div>
-          <div>
+          <div><!--
             <?php
                 if($message != "") {
                   echo "<div>
                     <p>". $message ."</p>
                   </div>";
                 }
-            ?>
+            ?>-->
           </div>
         </form>
       </div>

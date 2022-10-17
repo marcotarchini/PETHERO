@@ -10,7 +10,7 @@
         private $ownerDAO;
 
         public function __construct() {
-            $this->ownerDAO = new ownerDAO();
+            $this->ownerDAO = new OwnerDAO();
         }
 
         public function ShowAddView($message = "") {

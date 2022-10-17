@@ -4,9 +4,9 @@
 
     interface IKeeperDAO {
 
-        function Add($keeper);
+        function Add(Keeper $keeper);
         function Remove($idKeeper);
-        function Modify($keeper);
+        function Modify(Keeper $keeper);
         function GetAll();
         function GetByEmail($email);
     }

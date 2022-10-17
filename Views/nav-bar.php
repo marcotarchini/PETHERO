@@ -10,7 +10,7 @@
             <li><a href="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>">ADD OWNER</a></li>
             <li><a href="<?php echo FRONT_ROOT . "Owner/ShowListView"?>">LIST OWNER</a></li>
             <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>">ADD KEEPER</a></li>
-            <li><a href="<?php echo FRONT_ROOT . "BeerType/ShowListView"?>">LIST KEEPER</a></li>
+            <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>">LIST KEEPER</a></li>
             <li><a href="<?php echo FRONT_ROOT . "Home/Logout"?>">LOGOUT</a></li>
       </ul>
     </nav>
