@@ -74,13 +74,6 @@
 
             foreach($this->kepperList as $keeper) {
                 $value["idKeeper"] = $keeper->getIdKeeper();
-                $value["passKeeper"] = $keeper->getPassKeeper();
-                $value["namePerson"] = $keeper->getNamePerson();
-                $value["lastnamePerson"] = $keeper->getLastnamePerson();
-                $value["dni"] = $keeper->getDni();
-                $value["email"] = $keeper->getEmail();
-                $value["address"] = $keeper->getAddress();
-                $value["cellphone"] = $keeper->getCellphone();
                 $value["dogType"] = $keeper->getDogType();
                 $value["score"] = $keeper->getScore();
 
@@ -99,14 +92,8 @@
 
                 foreach($arrayDecode as $value) {
                     $keeper = new keeper();
+                    
                     $keeper->setIdKeeper($value["idKeeper"]);
-                    $keeper->setPassKeeper($value["passKeeper"]);
-                    $keeper->setNamePerson($value["namePerson"]);
-                    $keeper->setLastnamePerson($value["lastnamePerson"]);
-                    $keeper->setDni($value["dni"]);
-                    $keeper->setEmail($value["email"]);
-                    $keeper->setAddress($value["address"]);
-                    $keeper->setCellphone($value["cellphone"]);
                     $keeper->setDogType($value["dogType"]);
                     $keeper->setScore($value["score"]);
                     

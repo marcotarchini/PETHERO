@@ -2,6 +2,8 @@
 namespace Controllers;//logica de negocio
 
 use Controllers\UserController as UserController;
+use DAO\UserDAO;
+
 
     class HomeController
     {
@@ -9,8 +11,7 @@ use Controllers\UserController as UserController;
       
 
         public function __construct() {
-           $this->userController = new UserController();
-           
+           $this->userController = new UserDAO();   
         }
 
         public function Index($message = "") {
@@ -23,13 +24,18 @@ use Controllers\UserController as UserController;
         }
 
         public function Login($email, $password) {
-            $user = $this->userController->GetByEmail($email);
-           
-            if(($keeper != null) && ($user->getPassword() === $password)) {
-                $_SESSION["loggedUser"] = $user;
-                $this->ShowAddView();
-            } else {
-                $this->Index("Email y/o contraseña incorrecta");
+
+            if($email !=null){
+                $user = $this->userController->GetByEmail($email);
+            
+                if(($user != null) && ($user->getPassword() === $password)) {
+                    $_SESSION["loggedUser"] = $user;
+                    $this->ShowAddView();
+                } else {
+                    $this->Index("Email y/o contraseña incorrecta");
+                }
+            }else{
+                $this->Index("Error de mail");
             }
         }
 

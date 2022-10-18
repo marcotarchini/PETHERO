@@ -73,13 +73,6 @@
 
             foreach($this->ownerList as $owner) {
                 $value["idOwner"] = $owner->getIdOwner();
-                $value["passOwner"] = $owner->getPassOwner();
-                $value["namePerson"] = $owner->getNamePerson();
-                $value["lastnamePerson"] = $owner->getLastnamePerson();
-                $value["dni"] = $owner->getDni();
-                $value["email"] = $owner->getEmail();
-                $value["address"] = $owner->getAddress();
-                $value["cellphone"] = $owner->getCellphone();
                 $value["dog"] = $owner->getDog();
                 $value["service"] = $owner->getService();
 
@@ -97,15 +90,9 @@
                 $arrayDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
 
                 foreach($arrayDecode as $value) {
-                    $owner = new owner();
+                    $owner = new Owner();
+
                     $owner->setIdOwner($value["idOwner"]);
-                    $owner->setPassOwner($value["passOwner"]);
-                    $owner->setNamePerson($value["namePerson"]);
-                    $owner->setLastnamePerson($value["lastnamePerson"]);
-                    $owner->setDni($value["dni"]);
-                    $owner->setEmail($value["email"]);
-                    $owner->setAddress($value["address"]);
-                    $owner->setCellphone($value["cellphone"]);
                     $owner->setDog($value["dog"]);
                     $owner->setService($value["service"]);
                     

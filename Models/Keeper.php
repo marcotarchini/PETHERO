@@ -1,7 +1,7 @@
 <?php
 namespace Models;
 
-    class Keeper extends User {
+    class Keeper {
 
         private $idKeeper;
         private $dogType;

@@ -1,7 +1,7 @@
 <?php
 namespace Models;
 
-    class Owner extends User {
+    class Owner {
 
         private $idOwner;
         private $dog;
