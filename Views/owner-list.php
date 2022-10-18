@@ -11,8 +11,6 @@
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>">Home</a></li>
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>">ADD OWNER</a></li>
         <li><a href="<?php echo FRONT_ROOT . "Owner/ShowListView"?>">LIST/ REMOVE OWNER</a></li>
-        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>">ADD KEEPER</a></li>
-        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>">LIST/ REMOVE KEEPER</a></li>
       </ul>
     </div>
   </div>

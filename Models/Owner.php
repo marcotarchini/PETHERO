@@ -1,10 +1,9 @@
 <?php
 namespace Models;
 
-    class Owner extends Person {
+    class Owner extends User {
 
         private $idOwner;
-        private $passOwner;
         private $dog;
         private $service;
 
@@ -48,17 +47,6 @@ namespace Models;
                 return $this;
         }
 
-        public function getPassOwner()
-        {
-                return $this->passOwner;
-        }
-
-        public function setPassOwner($passOwner)
-        {
-                $this->passOwner = $passOwner;
-
-                return $this;
-        }
     }
 
     ?>

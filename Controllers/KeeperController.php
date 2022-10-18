@@ -52,7 +52,7 @@
         public function Remove($idKeeper) {
             require_once(VIEWS_PATH . "validate-session.php");
             
-            $this->keeperDAO->Remove($id);
+            $this->keeperDAO->Remove($idKeeper);
 
             $this->ShowListView();
         }

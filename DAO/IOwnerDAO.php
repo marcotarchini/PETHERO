@@ -8,6 +8,6 @@
         function Remove($idOwner);
         function Modify(Owner $owner);
         function GetAll();
-        function GetByEmail($email);
+       /* function GetByEmail($email);*/
     }
 ?>

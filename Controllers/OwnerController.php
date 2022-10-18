@@ -2,15 +2,19 @@
 
     namespace Controllers;
 
-    use DAO\OwnerDAO;
-    use Models\Owner;
+    use DAO\OwnerDAO as OwnerDAO;
+    use Models\Owner as Owner;
+    use DAO\DogDAO as DogDAO;
+    use Models\Dog as Dog;
    
 
     class OwnerController {
         private $ownerDAO;
+        private $dogDAO;
 
         public function __construct() {
             $this->ownerDAO = new OwnerDAO();
+            $this->dogDAO = new DogDAO();
         }
 
         public function ShowAddView($message = "") {

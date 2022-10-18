@@ -1,39 +1,40 @@
 <?php
 namespace Models;
 
-    abstract class Person {
+    abstract class User {
 
-        private $namePerson;
-        private $lastnamePerson;
+        private $nameUser;
+        private $lastnameUser;
         private $dni;
         private $email;
         private $address;
         private $cellphone;
+        private $password;
 
     
-        public function getNamePerson()
+        public function getNameUser()
         {
-                return $this->namePerson;
+                return $this->nameUser;
         }
 
      
-        public function setNamePerson($namePerson)
+        public function setNameUser($nameUser)
         {
-                $this->namePerson = $namePerson;
+                $this->nameUser = $nameUser;
 
                 return $this;
         }
 
      
-        public function getLastnamePerson()
+        public function getLastnameUser()
         {
-                return $this->lastnamePerson;
+                return $this->lastnameUser;
         }
 
        
-        public function setLastnamePerson($lastnamePerson)
+        public function setLastnameUser($lastnameUser)
         {
-                $this->lastnamePerson = $lastnamePerson;
+                $this->lastnameUser = $lastnameUser;
 
                 return $this;
         }
@@ -93,6 +94,17 @@ namespace Models;
                 return $this;
         }
 
+        public function getPassword()
+        {
+                return $this->password;
+        }
+
+        public function setPassword($password)
+        {
+                $this->password = $password;
+
+                return $this;
+        }
     }
 
     ?>

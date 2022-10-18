@@ -1,10 +1,9 @@
 <?php
 namespace Models;
 
-    class Keeper extends Person {
+    class Keeper extends User {
 
         private $idKeeper;
-        private $passKeeper;
         private $dogType;
         private $priceXDay;
         private $score;
@@ -65,19 +64,6 @@ namespace Models;
                 return $this;
         }
 
-       
-        public function getPassKeeper()
-        {
-                return $this->passKeeper;
-        }
-
-        
-        public function setPassKeeper($passKeeper)
-        {
-                $this->passKeeper = $passKeeper;
-
-                return $this;
-        }
     }
 
 ?>

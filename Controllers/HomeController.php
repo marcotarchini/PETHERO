@@ -1,47 +1,36 @@
 <?php
 namespace Controllers;//logica de negocio
 
-use DAO\KeeperDAO;
-use DAO\OwnerDAO;
+use Controllers\UserController as UserController;
 
     class HomeController
     {
-        private $keeperDAO;
-        private $ownerDAO;
+        private $userController;
+      
 
         public function __construct() {
-            $this->keeperDAO = new KeeperDAO();
-            $this->ownerDAO = new OwnerDAO();
+           $this->userController = new UserController();
+           
         }
 
         public function Index($message = "") {
             require_once(VIEWS_PATH . "home.php");
         }
 
-        public function ShowAddViewO() {
+        public function ShowAddView() {
             require_once(VIEWS_PATH . "validate-session.php");
-            require_once(VIEWS_PATH . "add-keeper.php");
-        }
-
-        public function ShowAddViewK() {
-            require_once(VIEWS_PATH . "validate-session.php");
-            require_once(VIEWS_PATH . "add-owner.php");
+            require_once(VIEWS_PATH . "add-user.php");
         }
 
         public function Login($email, $password) {
-            $keeper = $this->keeperDAO->GetByEmail($email);
-            $owner = $this->ownerDAO->GetByEmail($email);
-
-            if(($keeper != null) && ($keeper->getPassKeeper() === $password)) {
-                $_SESSION["loggedUser"] = $keeper;
-                $this->ShowAddViewK();
-            } else if(($owner != null) && ($owner->getPassOwner() === $password)) {
-                $_SESSION["loggedUser"] = $owner;
-                $this->ShowAddViewO();
+            $user = $this->userController->GetByEmail($email);
+           
+            if(($keeper != null) && ($user->getPassword() === $password)) {
+                $_SESSION["loggedUser"] = $user;
+                $this->ShowAddView();
             } else {
                 $this->Index("Email y/o contraseña incorrecta");
             }
-
         }
 
         public function Logout() {

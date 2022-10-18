@@ -108,3 +108,5 @@
         }
     }
 ?>
+
+<!--<img src="<?php echo FRONT_ROOT.IMG_PATH.$pet->getVaccinationPlan(); ?>" alt= "no-image.php"  style="width: 100px;">-->

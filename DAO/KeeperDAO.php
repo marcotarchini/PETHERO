@@ -55,7 +55,7 @@
             return $this->keeperList;
         }
 
-        public function GetByEmail($email) {
+        /*public function GetByEmail($email) {
             $this->RetrieveData();
 
             $keeper = null;
@@ -67,7 +67,7 @@
             $aux= array_values($aux);
 
             return (count($aux) > 0) ? $aux[0] : null;
-        }
+        }*/
 
         private function SaveData() {
             $arrayEncode = array();
