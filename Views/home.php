@@ -22,6 +22,9 @@
                                     </label>
                                 </div>
                                 <div>
+                                    <button type="button" onclick="<?php echo FRONT_ROOT . "User/ShowAddView"?>" class="btn">INGRESE GUARDIAN</button>
+                                </div>
+                                <div>
                                     <button type="submit" class="btn">Login</button>
                                 </div>
                             </form>                      

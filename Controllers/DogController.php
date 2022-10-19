@@ -30,7 +30,7 @@
             require_once(VIEWS_PATH . "modify-dog.php");
         }
 
-        public function Add($nameDog, $photo, $race,$size, $vaccines, $observation, $video) {
+        public function Add($nameDog, $photo, $race,$size, $vaccines, $observation, $video, $owner) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $dog = new dog();
@@ -42,6 +42,7 @@
             $dog->setVaccines($vaccines);
             $dog->setObservation($observation);
             $dog->setVideo($video);
+            $dog->setOwner($owner);
                    
                 $this->dogDAO->Add($dog);
                 $this->OwnerDAO->Add($Owner.dog);

@@ -8,9 +8,9 @@
   <div class="overlay">
     <div id="breadcrumb" class="clear"> 
       <ul>
-        <li><a href="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>">Home</a></li>
-        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>">ADD KEEPER</a></li>
-        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>">LIST/ REMOVE KEEPER</a></li>
+      <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>">INICIO</a></li>
+        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>">INGRESO GUARDIAN</a></li>
+        <li><a href="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>">LISTA \ BORRAR GUARDIAN</a></li>
       </ul>
     </div>
   </div>
@@ -39,17 +39,17 @@
           <tbody>
 
           <?php
-           
+            foreach($userList as $user){
             foreach($keeperList as $keeper) {
           ?>
             <tr>
                 <td><?php echo $keeper->getIdKeeper() ?></td>
-                <td><?php echo $keeper->getNamePerson() ?></td>
-                <td><?php echo $keeper->getLastnamePerson() ?></td>
-                <td><?php echo $keeper->getDni() ?></td>
-                <td><?php echo $keeper->getEmail() ?></td>
-                <td><?php echo $keeper->getAddress() ?></td>
-                <td><?php echo $keeper->getCellphone() ?></td>
+                <td><?php echo $user->getNameUser() ?></td>
+                <td><?php echo $user->getLastnameUser() ?></td>
+                <td><?php echo $user->getDni() ?></td>
+                <td><?php echo $user->getEmail() ?></td>
+                <td><?php echo $user->getAddress() ?></td>
+                <td><?php echo $user->getCellphone() ?></td>
                 <td><?php echo $keeper->getDogType() ?></td>
                 <td><?php echo $keeper->getPriceXDay() ?></td>
                 <td>
@@ -58,7 +58,7 @@
                 </td>
               </tr>
           <?php
-          }
+          }}
           ?>
           </tbody>
         </table></form> 

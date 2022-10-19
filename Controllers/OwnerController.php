@@ -34,18 +34,17 @@
             require_once(VIEWS_PATH . "modify-owner.php");
         }
 
-        public function Add($namePerson, $lastnamePerson, $dni,$email, $address, $cellphone, $dog, $service, $passOwner) {
+        public function Add($nameUser, $lastnameUser, $dni,$email, $address, $cellphone, $dog, $service, $passOwner) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $owner = new owner();
 
-            $owner->setNamePerson($namePerson);
-            $owner->setLastnamePerson($lastnamePerson);
+            $owner->setNameUser($nameUser);
+            $owner->setLastnameUser($lastnameUser);
             $owner->setDni($dni);
             $owner->setEmail($email);
             $owner->setAddress($address);
             $owner->setCellphone($cellphone);
-            $owner->setDog($dog);
             $owner->setService($service);
             $owner->setPassOwner($passOwner);
        
@@ -62,14 +61,14 @@
             $this->ShowListView();
         }
 
-        public function Modify($idOwner, $namePerson, $lastnamePerson, $dni,$email, $address, $cellphone, $dog, $service, $passOwner) {
+        public function Modify($idOwner, $nameUser, $lastnameUser, $dni,$email, $address, $cellphone, $dog, $service, $passOwner) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $owner = new owner();
 
             $owner->setIdOwner($idOwner);
-            $owner->setNamePerson($namePerson);
-            $owner->setLastnamePerson($lastnamePerson);
+            $owner->setNameUser($nameUser);
+            $owner->setLastnameUser($lastnameUser);
             $owner->setDni($dni);
             $owner->setEmail($email);
             $owner->setAddress($address);

@@ -2,8 +2,8 @@
 
     namespace Controllers;
 
-    use DAO\UserDAO;
-    use Models\User;
+    use DAO\UserDAO as UserDAO;
+    use Models\User as User;
 
     class userController {
         private $userController;

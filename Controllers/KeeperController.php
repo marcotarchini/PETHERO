@@ -2,8 +2,8 @@
 
     namespace Controllers;
 
-    use DAO\KeeperDAO;
-    use Models\Keeper;
+    use DAO\KeeperDAO as KeeperDAO;
+    use Models\Keeper as Keeper;
 
     class keeperController {
         private $keeperDAO;
@@ -29,12 +29,12 @@
             require_once(VIEWS_PATH . "modify-keeper.php");
         }
 
-        public function Add($namePerson, $lastnamePerson, $dni,$email, $address, $cellphone, $dogType, $priceXDay, $score, $passKeeper) {
+        public function Add($nameUser, $lastnameUser, $dni,$email, $address, $cellphone, $dogType, $priceXDay, $score, $password) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $keeper = new keeper();
-            $keeper->setNamePerson($namePerson);
-            $keeper->setLastnamePerson($lastnamePerson);
+            $keeper->setNameUser($nameUser);
+            $keeper->setLastnameUser($lastnameUser);
             $keeper->setDni($dni);
             $keeper->setEmail($email);
             $keeper->setAddress($address);
@@ -42,7 +42,7 @@
             $keeper->setDogType($dogType);
             $keeper->setPriceXDay($priceXDay);
             $keeper->setScore($score);
-            $keeper->setPassKeeper($passKeeper);
+            $keeper->setPassword($password);
                        
             $this->keeperDAO->Add($keeper);
 
@@ -57,13 +57,13 @@
             $this->ShowListView();
         }
 
-        public function Modify($idKeeper, $namePerson, $lastnamePerson, $dni,$email, $address, $cellphone, $dogType, $priceXDay, $score, $passKeeper) {
+        public function Modify($idKeeper, $nameUser, $lastnameUser, $dni,$email, $address, $cellphone, $dogType, $priceXDay, $score, $passKeeper) {
 
             $keeper = new keeper();
 
             $keeper->setId(intval($idKeeper));
-            $keeper->setNamePerson($namePerson);
-            $keeper->setLastnamePerson($lastnamePerson);
+            $keeper->setNameUser($nameUser);
+            $keeper->setLastnameUser($lastnameUser);
             $keeper->setDni($dni);
             $keeper->setEmail($email);
             $keeper->setAddress($address);

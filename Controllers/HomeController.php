@@ -11,7 +11,7 @@ use DAO\UserDAO;
       
 
         public function __construct() {
-           $this->userController = new UserDAO();   
+           $this->userController = new UserController();   
         }
 
         public function Index($message = "") {
@@ -25,9 +25,9 @@ use DAO\UserDAO;
 
         public function Login($email, $password) {
 
-            if($email !=null){
-                $user = $this->userController->GetByEmail($email);
-            
+            $user= new UserDAO();
+
+            if(($email !=null) && ($user->getByEmail($email)) ){
                 if(($user != null) && ($user->getPassword() === $password)) {
                     $_SESSION["loggedUser"] = $user;
                     $this->ShowAddView();

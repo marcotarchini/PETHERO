@@ -1,38 +1,46 @@
 <?php
 namespace Models;
 
-    class Dog {
+    class Cat {
 
-        private $idDog;
-        private $nameDog;
+        private $idCat
+        private $nameCat;
         private $photo;
         private $race;
         private $size;
         private $vaccines;
         private $observation;
         private $video;
-        private $owner;
 
-        public function getIdDog()
+        public function getIdCat()
         {
-                return $this->idDog;
+                return $this->idCat;
         }
 
-    
-        public function setIdDog($idDog)
+        public function setIdCat($idCat)
         {
-                $this->idDog = $idDog;
+                $this->idCat = $idCat;
 
                 return $this;
         }
 
-    
+        public function getNameCat()
+        {
+                return $this->nameCat;
+        }
+
+        public function setNameCat($nameCat)
+        {
+                $this->nameCat = $nameCat;
+
+                return $this;
+        }
+
         public function getPhoto()
         {
                 return $this->photo;
         }
 
-   
         public function setPhoto($photo)
         {
                 $this->photo = $photo;
@@ -40,13 +48,11 @@ namespace Models;
                 return $this;
         }
 
-     
         public function getRace()
         {
                 return $this->race;
         }
 
-   
         public function setRace($race)
         {
                 $this->race = $race;
@@ -54,12 +60,10 @@ namespace Models;
                 return $this;
         }
 
-   
         public function getSize()
         {
                 return $this->size;
         }
-
 
         public function setSize($size)
         {
@@ -68,13 +72,11 @@ namespace Models;
                 return $this;
         }
 
-     
         public function getVaccines()
         {
                 return $this->vaccines;
         }
 
-  
         public function setVaccines($vaccines)
         {
                 $this->vaccines = $vaccines;
@@ -82,13 +84,11 @@ namespace Models;
                 return $this;
         }
 
-    
         public function getObservation()
         {
                 return $this->observation;
         }
 
-   
         public function setObservation($observation)
         {
                 $this->observation = $observation;
@@ -96,46 +96,16 @@ namespace Models;
                 return $this;
         }
 
-   
         public function getVideo()
         {
                 return $this->video;
         }
 
-  
         public function setVideo($video)
         {
                 $this->video = $video;
 
                 return $this;
         }
-
-      
-        public function getNameDog()
-        {
-                return $this->nameDog;
-        }
-
-       
-        public function setNameDog($nameDog)
-        {
-                $this->nameDog = $nameDog;
-
-                return $this;
-        }
-
-  
-        public function getOwner()
-        {
-                return $this->owner;
-        }
-
-        public function setOwner($owner)
-        {
-                $this->owner = $owner;
-
-                return $this;
-        }
     }
-
-    ?>
+?>
