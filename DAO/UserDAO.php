@@ -73,5 +73,25 @@
             $jsonContent = json_encode($arrayEncode, JSON_PRETTY_PRINT);
             file_put_contents($this->fileName, $jsonContent);
         }
+
+        public function Remove($idUser) {
+            $this->RetrieveData();
+
+            $this->userList = array_filter($this->userList, function($user) use($idUser) {
+                return $user->getIdUser() != $idUser;
+            });
+
+            $this->SaveData();
+        }
+
+        public function Modify($user) {
+            $this->RetrieveData();
+
+            $this->Remove($user->getIdUser());
+
+            array_push($this->userList, $user);
+
+            $this->SaveData();
+        }
     }
 ?>

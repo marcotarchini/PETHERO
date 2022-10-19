@@ -54,19 +54,19 @@
             return $this->ownerList;
         }
 
-        /*public function GetByEmail($email) {
+        public function GetById($idOwner) {
             $this->RetrieveData();
 
             $owner = null;
 
-            $aux = array_filter($this->ownerList, function($owner) use ($email) {
-                return $owner->getEmail() === $email;
+            $aux = array_filter($this->ownerList, function($owner) use ($idOwner) {
+                return $owner->getIdOwnwer() === $idOwner;
             });
 
             $aux= array_values($aux);
 
             return (count($aux) > 0) ? $aux[0] : null;
-        }*/
+        }
 
         private function SaveData() {
             $arrayEncode = array();

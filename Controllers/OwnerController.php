@@ -28,25 +28,20 @@
             require_once(VIEWS_PATH . "owner-list.php");
         }
 
-        public function ShowModifyView($email) {
+        public function ShowModifyView($idOwner) {
             require_once(VIEWS_PATH . "validate-session.php");
-            $owner = $this->ownerDAO->GetByEmail($email);
+            $owner = $this->ownerDAO->GetById($idOwner);
             require_once(VIEWS_PATH . "modify-owner.php");
         }
 
-        public function Add($nameUser, $lastnameUser, $dni,$email, $address, $cellphone, $dog, $service, $passOwner) {
+        public function Add($idOwner, $dog, $service) {
             require_once(VIEWS_PATH . "validate-session.php");
 
-            $owner = new owner();
+            $owner = new Owner();
 
-            $owner->setNameUser($nameUser);
-            $owner->setLastnameUser($lastnameUser);
-            $owner->setDni($dni);
-            $owner->setEmail($email);
-            $owner->setAddress($address);
-            $owner->setCellphone($cellphone);
+            $owner->setIdOwner($idOwner);
+ /*0000000  $owner->setDog($dog);0000000000000000000000000000*/
             $owner->setService($service);
-            $owner->setPassOwner($passOwner);
        
                 $this->ownerDAO->Add($owner);
                 $this->ShowListView();
@@ -61,21 +56,19 @@
             $this->ShowListView();
         }
 
-        public function Modify($idOwner, $nameUser, $lastnameUser, $dni,$email, $address, $cellphone, $dog, $service, $passOwner) {
+        public function Modify($idOwner, $dog, $service) {
             require_once(VIEWS_PATH . "validate-session.php");
 
-            $owner = new owner();
+            $owner = new Owner();
 
             $owner->setIdOwner($idOwner);
-            $owner->setNameUser($nameUser);
-            $owner->setLastnameUser($lastnameUser);
-            $owner->setDni($dni);
-            $owner->setEmail($email);
-            $owner->setAddress($address);
-            $owner->setCellphone($cellphone);
             $owner->setDog($dog);
             $owner->setService($service);
-            $owner->setPassOwner($passOwner);
+
+            $this->ownerDAO->Modify($owner);
+
+            $this->ShowListView();
+           
         }
     }
 ?>

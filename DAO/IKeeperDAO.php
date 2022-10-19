@@ -8,6 +8,6 @@
         function Remove($idKeeper);
         function Modify(Keeper $keeper);
         function GetAll();
-       /* function GetByEmail($email);*/
+        function GetById($idKeeper);
     }
 ?>

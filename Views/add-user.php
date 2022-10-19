@@ -10,12 +10,7 @@
       
        <!-- <li><a href="<?php/* echo FRONT_ROOT . "Owner/ShowAddView"*/?>"></a></li>
         <li><a href="<?php/* echo FRONT_ROOT . "Keeper/ShowAddView"*/?>">ADD KEEPER</a></li>-->
-        <div>
-              <button type="button" onclick="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>" class="btn">INGRESE DUEÑO</button>
-        </div>
-        <div>
-              <button type="button" onclick="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>" class="btn">INGRESE GUARDIAN</button>
-        </div>
+        
     </div>
   </div>
 </div>
@@ -75,6 +70,7 @@
             ?>
           </div>
         </form>
+        
       </div>
     </div>
   </main>

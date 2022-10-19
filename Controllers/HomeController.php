@@ -2,7 +2,6 @@
 namespace Controllers;//logica de negocio
 
 use Controllers\UserController as UserController;
-use DAO\UserDAO;
 
 
     class HomeController
@@ -25,12 +24,12 @@ use DAO\UserDAO;
 
         public function Login($email, $password) {
 
-            $user= new UserDAO();
+            $user= new UserController();
 
             if(($email !=null) && ($user->getByEmail($email)) ){
                 if(($user != null) && ($user->getPassword() === $password)) {
                     $_SESSION["loggedUser"] = $user;
-                    $this->ShowAddView();
+                    $this->ShowView();
                 } else {
                     $this->Index("Email y/o contraseña incorrecta");
                 }

@@ -55,19 +55,19 @@
             return $this->keeperList;
         }
 
-        /*public function GetByEmail($email) {
+        public function GetById($idKeeper) {
             $this->RetrieveData();
 
             $keeper = null;
 
-            $aux = array_filter($this->keeperList, function($keeper) use ($email) {
-                return $keeper->getEmail() === $email;
+            $aux = array_filter($this->keeperList, function($keeper) use ($idKeeper) {
+                return $keeper->getIdKeeper() === $idKeeper;
             });
 
             $aux= array_values($aux);
 
             return (count($aux) > 0) ? $aux[0] : null;
-        }*/
+        }
 
         private function SaveData() {
             $arrayEncode = array();
@@ -75,6 +75,7 @@
             foreach($this->kepperList as $keeper) {
                 $value["idKeeper"] = $keeper->getIdKeeper();
                 $value["dogType"] = $keeper->getDogType();
+                $value ["priceXDay"] = $keeper->setPriceXDay();
                 $value["score"] = $keeper->getScore();
 
                 array_push($arrayEncode, $value);
@@ -95,6 +96,7 @@
                     
                     $keeper->setIdKeeper($value["idKeeper"]);
                     $keeper->setDogType($value["dogType"]);
+                    $keeper->setPriceXDay($value["priceXDay"]);
                     $keeper->setScore($value["score"]);
                     
                     array_push($this->keeperList, $keeper);

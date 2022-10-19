@@ -22,12 +22,14 @@
                                     </label>
                                 </div>
                                 <div>
-                                    <button type="button" onclick="<?php echo FRONT_ROOT . "User/ShowAddView"?>" class="btn">INGRESE GUARDIAN</button>
-                                </div>
-                                <div>
                                     <button type="submit" class="btn">Login</button>
                                 </div>
-                            </form>                      
+                                <br>
+                                <br>
+                            </form>  
+                            <div>
+                                    <button type="submit" onclick="<?php echo FRONT_ROOT . "User/ShowAddView"?>" class="btn">NUEVO USUARIO</button>
+                            </div>                     
                     </ul>
                 </li>             
             </ul>

@@ -23,26 +23,21 @@
             require_once(VIEWS_PATH . "keeper-list.php");
         }
 
-        public function ShowModifyView($email) {
+        public function ShowModifyView($idKeeper) {
             require_once(VIEWS_PATH . "validate-session.php");
-            $keeper = $this->keeperDAO->GetByEmail($email);
+            $keeper = $this->keeperDAO->GetById($idKeeper);
             require_once(VIEWS_PATH . "modify-keeper.php");
         }
 
-        public function Add($nameUser, $lastnameUser, $dni,$email, $address, $cellphone, $dogType, $priceXDay, $score, $password) {
+        public function Add($idKeeper, $dogType, $priceXDay, $score) {
             require_once(VIEWS_PATH . "validate-session.php");
 
-            $keeper = new keeper();
-            $keeper->setNameUser($nameUser);
-            $keeper->setLastnameUser($lastnameUser);
-            $keeper->setDni($dni);
-            $keeper->setEmail($email);
-            $keeper->setAddress($address);
-            $keeper->setCellphone($cellphone);
+            $keeper = new Keeper();
+
+            $keeper->setIdKeeper($idKeeper);
             $keeper->setDogType($dogType);
             $keeper->setPriceXDay($priceXDay);
             $keeper->setScore($score);
-            $keeper->setPassword($password);
                        
             $this->keeperDAO->Add($keeper);
 
@@ -57,22 +52,15 @@
             $this->ShowListView();
         }
 
-        public function Modify($idKeeper, $nameUser, $lastnameUser, $dni,$email, $address, $cellphone, $dogType, $priceXDay, $score, $passKeeper) {
+        public function Modify($idKeeper, $dogType, $priceXDay, $score) {
 
-            $keeper = new keeper();
+            $keeper = new Keeper();
 
             $keeper->setId(intval($idKeeper));
-            $keeper->setNameUser($nameUser);
-            $keeper->setLastnameUser($lastnameUser);
-            $keeper->setDni($dni);
-            $keeper->setEmail($email);
-            $keeper->setAddress($address);
-            $keeper->setCellphone($cellphone);
             $keeper->setDogType($dogType);
             $keeper->setPriceXDay($priceXDay);
             $keeper->setScore($score);
-            $keeper->setPassKeeper($passKeeper);
-
+        
             $this->keeperDAO->Modify($keeper);
 
             $this->ShowListView();
