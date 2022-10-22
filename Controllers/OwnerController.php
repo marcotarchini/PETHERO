@@ -39,8 +39,9 @@
 
             $owner = new Owner();
 
+            $owner->setUserOwner($userOwner);
             $owner->setIdOwner($idOwner);
- /*0000000  $owner->setDog($dog);0000000000000000000000000000*/
+            $owner->setDog($dog);
             $owner->setService($service);
        
                 $this->ownerDAO->Add($owner);
@@ -61,6 +62,7 @@
 
             $owner = new Owner();
 
+            $owner->setUserOwner($userOwner);
             $owner->setIdOwner($idOwner);
             $owner->setDog($dog);
             $owner->setService($service);

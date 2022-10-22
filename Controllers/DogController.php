@@ -30,11 +30,12 @@
             require_once(VIEWS_PATH . "modify-dog.php");
         }
 
-        public function Add($nameDog, $photo, $race,$size, $vaccines, $observation, $video, $owner) {
+        public function Add($idDog, $nameDog, $photo, $race,$size, $vaccines, $observation, $video, $owner) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $dog = new dog();
 
+            $dog->setIdDog($idDog);
             $dog->setNameDog($nameDog);
             $dog->setPhoto($photo);
             $dog->setRace($race);
@@ -52,18 +53,16 @@
 
         public function Remove($idDog) {
             require_once(VIEWS_PATH . "validate-session.php");
-
+            
             $this->dogDAO->Remove(intval($idDog));
-
             $this->ShowListView();
         }
 
-        public function Modify($idDog, $nameDog, $photo, $race,$size, $vaccines, $observation, $video) {
+        public function Modify($nameDog, $photo, $race,$size, $vaccines, $observation, $video) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $dog = new dog();
 
-            $dog->setIdDog($idDog);
             $dog->setNameDog($nameDog);
             $dog->setPhoto($photo);
             $dog->setRace($race);

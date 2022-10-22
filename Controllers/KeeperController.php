@@ -29,11 +29,12 @@
             require_once(VIEWS_PATH . "modify-keeper.php");
         }
 
-        public function Add($idKeeper, $dogType, $priceXDay, $score) {
+        public function Add($userKeeper, $idKeeper, $dogType, $priceXDay, $score) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $keeper = new Keeper();
 
+            $keeper->setUserKeeper($userKeeper);
             $keeper->setIdKeeper($idKeeper);
             $keeper->setDogType($dogType);
             $keeper->setPriceXDay($priceXDay);
@@ -52,11 +53,12 @@
             $this->ShowListView();
         }
 
-        public function Modify($idKeeper, $dogType, $priceXDay, $score) {
+        public function Modify($userKeeper, $idKeeper, $dogType, $priceXDay, $score) {
 
             $keeper = new Keeper();
 
-            $keeper->setId(intval($idKeeper));
+            $keeper->setUserKeeper($userKeeper);
+            $keeper->setIdKeeper(intval($idKeeper));
             $keeper->setDogType($dogType);
             $keeper->setPriceXDay($priceXDay);
             $keeper->setScore($score);

@@ -28,11 +28,9 @@ use Controllers\UserController as UserController;
 
             if(($email !=null) ){
 
-                var_dump($this->$user->UserDAO->GetByEmail($email));
-
-                $userFromDAO = $this->$user->UserDAO->GetByEmail($email);
-                if(($userFromDAO != null) && ($userFromDAO->getPassword() === $password)) {
-                    $_SESSION["loggedUser"] = $user;
+                $aux = $this->$user->UserDAO->GetByEmail($email);
+                if(($aux != null) && ($user->getPassword() === $password)) {
+                    $_SESSION["loggedUser"] = $aux;
                     $this->ShowView();
                 } else {
                     $this->Index("Email y/o contraseña incorrecta");

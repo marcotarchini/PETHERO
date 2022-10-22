@@ -34,17 +34,20 @@
             $this->ShowAddView();
         }
 
-        public function Add($idKeeper, $dogType, $priceXDay, $score) {
+        public function Add($nameUser, $lastnameUser, $dni, $email, $address, $cellphone, $password) {
             require_once(VIEWS_PATH . "validate-session.php");
 
-            $keeper = new Keeper();
+            $user = new User();
 
-            $keeper->setIdKeeper($idKeeper);
-            $keeper->setDogType($dogType);
-            $keeper->setPriceXDay($priceXDay);
-            $keeper->setScore($score);
-                       
-            $this->keeperDAO->Add($keeper);
+            $user->setNameUser($nameUser);
+            $user->setLastnameUser($lastnameUser);
+            $user->setDni($dni);
+            $user->setEmail($email);
+            $user->setAddress($address);
+            $user->setCellphone($cellphone);
+            $user->setPassword($password);
+
+            $this->userController->Add($user);
             $this->ShowView();
         }
 
