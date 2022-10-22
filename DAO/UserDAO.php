@@ -59,14 +59,14 @@
             $arrayEncode = array();
 
             foreach($this->userList as $users) {
-               
-                $value["password"] = $users->getPassword();
+                
                 $value["nameUser"] = $users->getNameUser();
                 $value["lastnameUser"] = $users->getLastnameUser();
                 $value["dni"] = $users->getDni();
                 $value["email"] = $users->getEmail();
                 $value["address"] = $users->getAddress();
                 $value["cellphone"] = $users->getCellphone();
+                $value["password"] = $users->getPassword();
                 
                 array_push($arrayEncode, $value);
             }

@@ -1,7 +1,8 @@
 [
     {
-        "idDog":"1",
-        "nameDog":"Mohana",
+        "idPet":"1",
+        "animal":"Perro",
+        "namePet":"Mohana",
         "photo":"",
         "race":"Caniche",
         "size":"Pequeño",

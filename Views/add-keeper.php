@@ -27,7 +27,7 @@
           <table> 
             <thead>
               
-                <th>Tipo de perro</th>
+                <th>Tipo de mascota</th>
                 <th>Precio por dia</th>
               
             </thead>

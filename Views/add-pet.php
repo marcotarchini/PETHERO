@@ -1,7 +1,5 @@
 <?php
 
-use DAO\PetDAO;
-
  include('nav-bar.php');
  require_once(VIEWS_PATH . "validate-session.php");
  
@@ -29,28 +27,28 @@ use DAO\PetDAO;
         <form action="<?php echo FRONT_ROOT . "Owner/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>
-                <th>Pet</th>
+                <th>Dog</th>
                 <th>Service</th>          
             </thead>
             <tbody align="center">
               <tr>
                 <td style="max-width: 100px;">
-                  <input type="text" name="pet" required>
+                  <input type="text" name="dog" required>
                 </td>
                 <td>
                   <input type="text" name="service" required>
                 </td> 
                 <td>
-                  <select name="pet" id="pet" class="select">
+                  <select name="dog" id="dog" class="select">
                 </td>
                 <td>
                       <?php
                         $dogDAO = new DogDAO();
                         $dogList = $dogDAO->GetAll();
 
-                        foreach($dogList as $pet) {
-                          echo "<option value=". $pet->getIdPet() .">
-                          ". $pet->getNameDog(). "
+                        foreach($dogList as $dog) {
+                          echo "<option value=". $dog->getIdDog() .">
+                          ". $dog->getNameDog(). "
                           </option>";
                         }
                       ?>

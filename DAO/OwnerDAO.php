@@ -4,10 +4,12 @@
 
     use DAO\IOwnerDAO as IOwnerDAO;
     use Models\Owner as Owner;
+    use Models\UserDAO as UserDAO;
 
     class OwnerDAO implements IOwnerDAO {
         private $fileName = ROOT . "/Data/owner.json";
         private $ownerList = array();
+        private $user = new UserDAO;
 
         public function Add($owner) {
             $this->RetrieveData();

@@ -22,11 +22,11 @@
             require_once(VIEWS_PATH . "add-owner.php");
         }
 
-        public function ShowListView() {
+        /*public function ShowListView() {
             require_once(VIEWS_PATH . "validate-session.php");
             $ownerList = $this->ownerDAO->GetAll();
             require_once(VIEWS_PATH . "owner-list.php");
-        }
+        }*/
 
         public function ShowModifyView($idOwner) {
             require_once(VIEWS_PATH . "validate-session.php");
@@ -39,7 +39,7 @@
 
             $owner = new Owner();
 
-            $owner->setUserOwner($userOwner);
+            $owner->setUserOwner($userOwner);/*PASAR DATOS?*/
             $owner->setIdOwner($idOwner);
             $owner->setDog($dog);
             $owner->setService($service);
@@ -69,7 +69,7 @@
 
             $this->ownerDAO->Modify($owner);
 
-            $this->ShowListView();
+            $this->ShowAddView();
            
         }
     }
