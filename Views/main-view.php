@@ -18,19 +18,7 @@
   </div>
 </div>
 <!-- ################################################################################################ -->
-<div class="wrapper row4">
-    <main class="hoc container clear"> 
-        <div>
-            <button type="button" onclick="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>" class="btn">LISTADO DE DUEÑOS</button>
-        </div>
-        <div>
-            <button type="button" onclick="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>" class="btn">LISTADO DE GUARDIANES</button>
-        </div>
-        <div>
-            <button type="button" onclick="<?php echo FRONT_ROOT . "Booking/ShowAddView"?>" class="btn">RESERVA</button>
-        </div>
-    </main>
-</div>
+
 
 
 

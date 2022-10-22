@@ -2,7 +2,7 @@
 
     namespace DAO;
 
-    use Models\Pet;
+    use Models\Pet as Pet;
 
     class PetDAO implements IPetDAO {
         private $fileName = ROOT . "/Data/pet.json";
@@ -70,7 +70,7 @@
 
             foreach($this->petList as $pet) {
                 $value["idPet"] = $pet->getIdpet();
-                $value["animal"] = $animal-> getAnimal();
+                $value["animal"] = $pet-> getAnimal();
                 $value["namepet"] = $pet->getNamepet();
                 $value["photo"] = $pet->getPhoto();
                 $value["race"] = $pet->getRace();
@@ -93,10 +93,10 @@
                 $arrayDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
 
                 foreach($arrayDecode as $value) {
-                    $pet = new pet();
+                    $pet = new Pet();
                     $pet->getIdpet($value["idPet"]);
                     $pet->getAnimal($value["animal"]);
-                    $pet->getNamepet($value["namepet"]);
+                    $pet->getNamePet($value["namePet"]);
                     $pet->getPhoto($value["photo"]);
                     $pet->getRace($value["race"]);
                     $pet->getSize($value["size"]);

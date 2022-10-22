@@ -5,7 +5,7 @@
     use DAO\KeeperDAO as KeeperDAO;
     use Models\Keeper as Keeper;
 
-    class keeperController {
+    class KeeperController {
         private $keeperDAO;
 
         public function __construct() {

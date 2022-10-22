@@ -1,11 +1,11 @@
 <?php
 namespace Controllers;//logica de negocio
 
-use Controllers\UserController as UserController;
+//use Controllers\UserController as UserController;
+use DAO\UserDAO as UserDAO;
 
 
-    class HomeController
-    {
+    class HomeController    {
         private $userController;
       
 
@@ -22,14 +22,20 @@ use Controllers\UserController as UserController;
             require_once(VIEWS_PATH . "add-user.php");
         }
 
+        public function ShowView() {
+            require_once(VIEWS_PATH . "validate-session.php");
+            require_once(VIEWS_PATH . "user-view.php");
+        }
+
         public function Login($email, $password) {
 
-            $user= new UserController();
+            //$user= new UserController();
+            $user = new UserDAO();
 
             if(($email !=null) ){
 
-                $aux = $this->$user->UserDAO->GetByEmail($email);
-                if(($aux != null) && ($user->getPassword() === $password)) {
+                $aux = $user->GetByEmail($email);
+                if(($aux != null) && ($aux->getPassword() === $password)) {
                     $_SESSION["loggedUser"] = $aux;
                     $this->ShowView();
                 } else {

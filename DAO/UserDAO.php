@@ -67,18 +67,18 @@
                 $value["address"] = $users->getAddress();
                 $value["cellphone"] = $users->getCellphone();
                 $value["password"] = $users->getPassword();
-                
+
                 array_push($arrayEncode, $value);
             }
             $jsonContent = json_encode($arrayEncode, JSON_PRETTY_PRINT);
             file_put_contents($this->fileName, $jsonContent);
         }
 
-        public function Remove($idUser) {
+        public function Remove($email) {
             $this->RetrieveData();
 
-            $this->userList = array_filter($this->userList, function($user) use($idUser) {
-                return $user->getIdUser() != $idUser;
+            $this->userList = array_filter($this->userList, function($user) use($email) {
+                return $user->getIdUser() != $emailr;
             });
 
             $this->SaveData();
@@ -87,7 +87,7 @@
         public function Modify($user) {
             $this->RetrieveData();
 
-            $this->Remove($user->getIdUser());
+            $this->Remove($user->getEmail());
 
             array_push($this->userList, $user);
 

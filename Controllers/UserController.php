@@ -5,7 +5,7 @@
     use DAO\UserDAO as UserDAO;
     
 
-    class userController {
+    class UserController {
         private $userController;
 
         public function __construct() {

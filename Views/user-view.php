@@ -27,12 +27,12 @@
         <table style="text-align:center;">
           <thead>
             <tr>
-              <th style="width: 20%;">Name</th>
-              <th style="width: 20%;">Last Name</th>
+              <th style="width: 20%;">Nombre</th>
+              <th style="width: 20%;">Apellido</th>
               <th style="width: 10%">DNI</th>
               <th style="width: 20%">Email</th>
-              <th style="width: 20%">Address</th>
-              <th style="width: 10%">Cellphone</th>
+              <th style="width: 20%">Direccion</th>
+              <th style="width: 10%">Telefono</th>
             </tr>
           </thead>
           <tbody>
@@ -58,6 +58,19 @@
           </tbody>
         </table></form> 
       </div>
+              <div class="wrapper row4">
+                  <main class="hoc container clear"> 
+                      <div>
+                          <button type="button" onclick="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>" class="btn">INGRESAR DUEÑO</button>
+                      </div>
+                      <div>
+                          <button type="button" onclick="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>" class="btn">INGRESAR GUARDIAN</button>
+                      </div>
+                      <div>
+                          <button type="button" onclick="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>" class="btn">RESERVA</button>
+                      </div>
+                  </main>
+              </div>
     
     <!-- / main body -->
     <div class="clear"></div>
