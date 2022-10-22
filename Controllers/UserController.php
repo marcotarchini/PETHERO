@@ -9,8 +9,7 @@
         private $userController;
 
         public function __construct() {
-            $this->userController = new UserDAO();
-            
+            $this->userController = new UserDAO();      
         }
 
         public function ShowAddView() {
@@ -31,9 +30,7 @@
 
         public function Remove($email) {
             require_once(VIEWS_PATH . "validate-session.php");
-
             $this->userController->Remove(intval($email));
-
             $this->ShowAddView();
         }
 
@@ -48,7 +45,6 @@
             $keeper->setScore($score);
                        
             $this->keeperDAO->Add($keeper);
-
             $this->ShowView();
         }
 
@@ -66,7 +62,6 @@
             $user->setPassword($password);
 
             $this->userController->Modify($user);
-
             $this->ShowView();
         }
     }

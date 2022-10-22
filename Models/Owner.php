@@ -4,6 +4,7 @@ namespace Models;
     class Owner {
 
         private $idOwner;
+        private $userOwner;
         private $dog;
         private $service;
 
@@ -47,6 +48,17 @@ namespace Models;
                 return $this;
         }
 
+        public function getUserOwner()
+        {
+                return $this->userOwner;
+        }
+
+        public function setUserOwner($userOwner)
+        {
+                $this->userOwner = $userOwner;
+
+                return $this;
+        }
     }
 
     ?>

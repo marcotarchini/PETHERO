@@ -26,8 +26,12 @@ use Controllers\UserController as UserController;
 
             $user= new UserController();
 
-            if(($email !=null) && ($user->getByEmail($email)) ){
-                if(($user != null) && ($user->getPassword() === $password)) {
+            if(($email !=null) ){
+
+                var_dump($this->$user->UserDAO->GetByEmail($email));
+
+                $userFromDAO = $this->$user->UserDAO->GetByEmail($email);
+                if(($userFromDAO != null) && ($userFromDAO->getPassword() === $password)) {
                     $_SESSION["loggedUser"] = $user;
                     $this->ShowView();
                 } else {

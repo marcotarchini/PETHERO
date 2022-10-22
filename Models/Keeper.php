@@ -4,6 +4,7 @@ namespace Models;
     class Keeper {
 
         private $idKeeper;
+        private $userKeeper;
         private $dogType;
         private $priceXDay;
         private $score;
@@ -64,6 +65,17 @@ namespace Models;
                 return $this;
         }
 
+        public function getUserKeeper()
+        {
+                return $this->userKeeper;
+        }
+
+        public function setUserKeeper($userKeeper)
+        {
+                $this->userKeeper = $userKeeper;
+
+                return $this;
+        }
     }
 
 ?>
