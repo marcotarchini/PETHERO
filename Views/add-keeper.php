@@ -25,20 +25,38 @@
         <h2>INGRESE NUEVO GUARDIAN</h2>
         <form action="<?php echo FRONT_ROOT . "Keeper/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
-            <thead>
-              
-                <th>Tipo de mascota</th>
-                <th>Precio por dia</th>
-              
+            <thead>             
+                <th>NOMBRE:</th>
+                <th>APELLIDO:</th>
+                <th>DNI:</th>
+                <th>EMAIL:</th>
+                <th>TELEFONO:</th>
+                <th>TAMAÑO DE MASCOTA QUE CUIDA:</th>
+                <th>PRECIO POR DIA:</th>           
             </thead>
             <tbody align="center">
               <tr>
                 <td style="max-width: 100px;">
-                  <input type="text" name="dogType" required>
+                  <input type="text" name="nameKeeper" required>
                 </td>
                 <td>
-                   <input type="number" name="priceXDay" required>
+                   <input type="text" name="lNameKeeper" required>
+                </td>
+                <td>
+                    <input type="text" name="dni" required>
                 </td>  
+                <td>
+                    <input type="text" name="email" required>
+                </td> 
+                <td>
+                    <input type="text" name="cellphone" required>
+                </td> 
+                <td>
+                    <input type="text" name="petType" required>
+                </td> 
+                <td>
+                    <input type="number" name="priceXDay" required>
+                </td> 
               </tr>
               </tbody>
           </table>

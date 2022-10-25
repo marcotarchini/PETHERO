@@ -46,7 +46,7 @@
 
             $this->Remove($owner->getIdOwner());
 
-            array_push($this->OwnerList, $owner);
+            array_push($this->ownerList, $owner);
 
             $this->SaveData();
         }
@@ -62,7 +62,7 @@
             $owner = null;
 
             $aux = array_filter($this->ownerList, function($owner) use ($idOwner) {
-                return $owner->getIdOwnwer() === $idOwner;
+                return $owner->getIdOwner() === $idOwner;
             });
 
             $aux= array_values($aux);
@@ -75,8 +75,15 @@
 
             foreach($this->ownerList as $owner) {
                 $value["idOwner"] = $owner->getIdOwner();
-                $value["dog"] = $owner->getDog();
+                $value["nameOwner"] = $owner->getNameOwner();
+                $value["lNameOwner"] = $owner->getLNameOwner();
+                $value["dni"] = $owner->getDni();
+                $value["email"] = $owner->getEmail();
+                $value["address"] = $owner->getAddress();
+                $value["cellphone"] = $owner->getCellphone();      
+                $value["pet"] = $owner->getPet();
                 $value["service"] = $owner->getService();
+                $value["ownerUser"] = $owner->getOwnerUser();
 
                 array_push($arrayEncode, $value);
             }
@@ -95,8 +102,15 @@
                     $owner = new Owner();
 
                     $owner->setIdOwner($value["idOwner"]);
-                    $owner->setDog($value["dog"]);
+                    $owner->setNameOwner($value["nameOwner"]);
+                    $owner->setLNameOwner($value["lNameOwner"]);
+                    $owner->setDni($value["dni"]);
+                    $owner->setEmail($value["email"]);
+                    $owner->setAddress($value["address"]);
+                    $owner->setCellphone($value["cellphone"]);
+                    $owner->setPet($value["pet"]);
                     $owner->setService($value["service"]);
+                    $owner->setOwnerUser($value["ownerUser"]);
                     
                     array_push($this->ownerList, $owner);
                 }

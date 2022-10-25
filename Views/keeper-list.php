@@ -28,31 +28,30 @@
           <thead>
             <tr>
               <th style="width: 10%;">ID</th>
-              <th style="width: 20%;">Name</th>
-              <th style="width: 20%;">Last Name</th>
-              <th style="width: 20%">DNI</th>
+              <th style="width: 20%;">Nombre</th>
+              <th style="width: 20%;">Apellido</th>
+              <th style="width: 10%">DNI</th>
               <th style="width: 20%">Email</th>
-              <th style="width: 20%">Address</th>
-              <th style="width: 20%">Cellphone</th>
-              <th style="width: 20%">Dog type</th>
-              <th style="width: 20%">Price for day</th>
+              <th style="width: 20%">Direccion</th>
+              <th style="width: 10%">Telefono</th>
+              <th style="width: 10%">Tamaño</th>
+              <th style="width: 10%">Precio por dia</th>
             </tr>
           </thead>
           <tbody>
 
           <?php
-            foreach($userList as $user){
             foreach($keeperList as $keeper) {
           ?>
             <tr>
                 <td><?php echo $keeper->getIdKeeper() ?></td>
-                <td><?php echo $user->getNameUser() ?></td>
-                <td><?php echo $user->getLastnameUser() ?></td>
-                <td><?php echo $user->getDni() ?></td>
-                <td><?php echo $user->getEmail() ?></td>
-                <td><?php echo $user->getAddress() ?></td>
-                <td><?php echo $user->getCellphone() ?></td>
-                <td><?php echo $keeper->getDogType() ?></td>
+                <td><?php echo $keeper->getNameKeeper() ?></td>
+                <td><?php echo $keeper->getLNameKeeper() ?></td>
+                <td><?php echo $keeper->getDni() ?></td>
+                <td><?php echo $keeper->getEmail() ?></td>
+                <td><?php echo $keeper->getAddress() ?></td>
+                <td><?php echo $keeper->getCellphone() ?></td>
+                <td><?php echo $keeper->getPetType() ?></td>
                 <td><?php echo $keeper->getPriceXDay() ?></td>
                 <td>
                   <button type="submit" name="idKeeper" class="btn" value="<?php echo $keeper->getIdKeeper() ?>"> Remove </button>
@@ -60,7 +59,7 @@
                 </td>
               </tr>
           <?php
-          }}
+          }
           ?>
           </tbody>
         </table></form> 

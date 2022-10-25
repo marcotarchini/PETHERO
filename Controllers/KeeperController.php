@@ -29,14 +29,18 @@
             require_once(VIEWS_PATH . "modify-keeper.php");
         }
 
-        public function Add($userKeeper, $idKeeper, $dogType, $priceXDay, $score) {
+        public function Add($nameKeeper,  $lNameOwner, $dni, $email, $address, $cellphone, $petType, $priceXDay, $score) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $keeper = new Keeper();
 
-            $keeper->setUserKeeper($userKeeper);
-            $keeper->setIdKeeper($idKeeper);
-            $keeper->setDogType($dogType);
+            $keeper->setNameKeeper($nameKeeper);
+            $keeper->setLNameKeeper($lNameKeeper);
+            $keeper->setDni($dni);
+            $keeper->setEmail($email);
+            $keeper->setAddress($address);
+            $keeper->setCellphone($cellphone);
+            $keeper->setPetType($petType);
             $keeper->setPriceXDay($priceXDay);
             $keeper->setScore($score);
                        
@@ -53,13 +57,17 @@
             $this->ShowListView();
         }
 
-        public function Modify($userKeeper, $idKeeper, $dogType, $priceXDay, $score) {
+        public function Modify($nameKeeper,  $lNameOwner, $dni, $email, $address, $cellphone, $petType, $priceXDay, $score) {
 
             $keeper = new Keeper();
 
-            $keeper->setUserKeeper($userKeeper);
-            $keeper->setIdKeeper(intval($idKeeper));
-            $keeper->setDogType($dogType);
+            $keeper->setNameKeeper($nameKeeper);
+            $keeper->setLNameKeeper($lNameKeeper);
+            $keeper->setDni($dni);
+            $keeper->setEmail($email);
+            $keeper->setAddress($address);
+            $keeper->setCellphone($cellphone);
+            $keeper->setPetType($petType);
             $keeper->setPriceXDay($priceXDay);
             $keeper->setScore($score);
         

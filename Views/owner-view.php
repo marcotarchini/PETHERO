@@ -27,15 +27,14 @@
         <table style="text-align:center;">
           <thead>
             <tr>
-              <th style="width: 5%;">Id</th>
-              <th style="width: 10%;">Name</th>
-              <th style="width: 10%;">Last Name</th>
+              <th style="width: 5%;">ID</th>
+              <th style="width: 20%;">Nombre</th>
+              <th style="width: 20%;">Apellido</th>
               <th style="width: 10%">DNI</th>
-              <th style="width: 10%">Email</th>
-              <th style="width: 20%">Address</th>
-              <th style="width: 30%">Cellphone</th>
-              <th style="width: 10%">Dog</th>
-              <th style="width: 10%">Service</th>
+              <th style="width: 20%">Email</th>
+              <th style="width: 20%">Direccion</th>
+              <th style="width: 10%">Telefono</th>
+              <th style="width: 10%">Servicio</th>
             </tr>
           </thead>
           <tbody>
@@ -45,13 +44,12 @@
           ?>
             <tr>
                 <td><?php echo $owner->getIdOwner() ?></td>
-                <td><?php echo $owner->getNamePerson() ?></td>
-                <td><?php echo $owner->getLastNamePerson() ?></td>
+                <td><?php echo $owner->getNameOwner() ?></td>
+                <td><?php echo $owner->getLNameOwner() ?></td>
                 <td><?php echo $owner->getDni() ?></td>
                 <td><?php echo $owner->getEmail() ?></td>
                 <td><?php echo $owner->getAddress() ?></td>
                 <td><?php echo $owner->getCellphone() ?></td>
-                <td><?php echo $owner->getDog()->getNameDog() ?></td>
                 <td><?php echo $owner->getService() ?></td>
                 <td>
                   <button type="submit" name="idOwner" class="btn" value="<?php echo $owner->getIdOwner() ?>"> Remove </button>
@@ -62,7 +60,48 @@
           }
           ?>
           </tbody>
-        </table></form> 
+        </table>
+      </form> 
+      <form action="<?php echo FRONT_ROOT . "Pet/Remove" ?>" method="post">
+        <table style="text-align:center;">
+          <thead>
+            <tr>
+              <th style="width: 10%;">ID</th>
+              <th style="width: 10%;">Animal</th>
+              <th style="width: 10%;">Nombre</th>
+              <th style="width: 30%">Foto</th>
+              <th style="width: 10%">Raza</th>
+              <th style="width: 10%">Tamaño</th>
+              <th style="width: 30%">Plan de vacunas</th>
+              <th style="width: 30%">Video</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          <?php
+              foreach($petList as $pet) {
+          ?>
+            <tr>
+                <td><?php echo $pet->getIdPet() ?></td>
+                <td><?php echo $pet->getAnimal() ?></td>
+                <td><?php echo $pet->getNamePet() ?></td>
+                <td><?php echo $pet->getPhoto() ?></td>
+                <td><?php echo $pet->getRace() ?></td>
+                <td><?php echo $pet->getSize() ?></td>
+                <td><?php echo $pet->getObservation() ?></td>
+                <td><?php echo $pet->getVaccines() ?></td>
+                <td><?php echo $pet->getVideo() ?></td>
+                <td>
+                  <button type="submit" name="idPet" class="btn" value="<?php echo $pet->getIdPet() ?>"> Borrar </button>
+                  <a href="<?php echo FRONT_ROOT . "Pet/ShowModifyView/" . $pet->getIdPet() ?>" class="btn"> Modificar </a>
+                </td>
+              </tr>
+          <?php
+          }
+          ?>
+          </tbody>
+        </table>
+      </form> 
       </div>
     </div>
     <!-- / main body -->

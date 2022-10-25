@@ -3,6 +3,7 @@
     namespace Controllers;
 
     use DAO\UserDAO as UserDAO;
+    use Models\User as User;
     
 
     class UserController {
@@ -22,46 +23,36 @@
             require_once(VIEWS_PATH . "user-view.php");
         }
 
-        public function ShowModifyView($email) {
+        public function ShowModifyView($userName) {
             require_once(VIEWS_PATH . "validate-session.php");
-            $user = $this->userDAO->GetByEmail($email);
+            $user = $this->userDAO->GetByUser($userName);
             require_once(VIEWS_PATH . "modify-user.php");
         }
 
-        public function Remove($email) {
+        public function Remove($id) {
             require_once(VIEWS_PATH . "validate-session.php");
-            $this->userController->Remove(intval($email));
-            $this->ShowAddView();
+            $this->userController->Remove(intval($id));
+            $this->ShowView();
         }
 
-        public function Add($nameUser, $lastnameUser, $dni, $email, $address, $cellphone, $password) {
+        public function Add($userName, $password) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $user = new User();
 
-            $user->setNameUser($nameUser);
-            $user->setLastnameUser($lastnameUser);
-            $user->setDni($dni);
-            $user->setEmail($email);
-            $user->setAddress($address);
-            $user->setCellphone($cellphone);
+            $user->setNameUser($userName);
             $user->setPassword($password);
 
             $this->userController->Add($user);
             $this->ShowView();
         }
 
-        public function Modify($nameUser, $lastnameUser, $dni, $email, $address, $cellphone, $password) {
+        public function Modify($userName, $password) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $user = new User();
 
-            $user->setNameUser($nameUser);
-            $user->setLastnameUser($lastnameUser);
-            $user->setDni($dni);
-            $user->setEmail($email);
-            $user->setAddress($address);
-            $user->setCellphone($cellphone);
+            $user->setUserName($userName);
             $user->setPassword($password);
 
             $this->userController->Modify($user);

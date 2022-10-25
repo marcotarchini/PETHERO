@@ -18,7 +18,6 @@ use DAO\UserDAO as UserDAO;
         }
 
         public function ShowAddView() {
-            require_once(VIEWS_PATH . "validate-session.php");
             require_once(VIEWS_PATH . "add-user.php");
         }
 
@@ -27,19 +26,19 @@ use DAO\UserDAO as UserDAO;
             require_once(VIEWS_PATH . "user-view.php");
         }
 
-        public function Login($email, $password) {
+        public function Login($userName, $password) {
 
             //$user= new UserController();
             $user = new UserDAO();
 
-            if(($email !=null) ){
+            if(($userName !=null) ){
 
-                $aux = $user->GetByEmail($email);
+                $aux = $user->GetByUser($userName);
                 if(($aux != null) && ($aux->getPassword() === $password)) {
                     $_SESSION["loggedUser"] = $aux;
                     $this->ShowView();
                 } else {
-                    $this->Index("Email y/o contraseña incorrecta");
+                    $this->ShowAddView();
                 }
             }else{
                 $this->Index("Error de mail");

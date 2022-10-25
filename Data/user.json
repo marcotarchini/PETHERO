@@ -1,11 +1,7 @@
 [
     {
-        "nameUser":"Marco",
-        "lastnameUser":"Tarchini",
-        "dni":"29909079",
-        "email":"tarchinimarco@gmail.com",
-        "address":"F U Camet 2309",
-        "cellphone":"2235516482",
+        "id":"1",
+        "userName":"Marco",
         "password":"1234"
 
     }

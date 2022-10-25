@@ -24,36 +24,16 @@
         <form action="<?php echo FRONT_ROOT . "user/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>
-                <th>NOMBRE:</th>
-                <th>APELLIDO:</th> 
-                <th>DNI:</th> 
-                <th>EMAIL:</th> 
-                <th>DIRECCION:</th> 
-                <th>TELEFONO</th>        
+                <th>NOMBRE:</th>      
                 <th>CONTRASEÑA</th>    
             </thead>
             <tbody align="center">
               <tr>
                 <td style="max-width: 100px;">
-                  <input type="text" name="nameUser" required>
+                    <input type="text" name="userName" required>
                 </td>
                 <td>
-                  <input type="text" name="lastnameUser" required>
-                </td> 
-                <td>
-                <input type="text" name="dni" required>
-                </td>
-                <td>
-                <input type="text" name="email" required>
-                </td> 
-                <td>
-                <input type="text" name="address" required>
-                </td> 
-                <td>
-                <input type="text" name="cellphone" required>
-                </td> 
-                <td>
-                <input type="text" name="password" required>
+                    <input type="text" name="password" required>
                 </td>                  
               </tr>
               </tbody>

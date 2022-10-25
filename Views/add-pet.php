@@ -23,38 +23,42 @@
 <main class="container clear"> 
     <div class="content"> 
       <div id="comments" >
-        <h2>INGRESE NUEVO DUEÑO</h2>
-        <form action="<?php echo FRONT_ROOT . "Owner/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
+        <h2>INGRESE MASCOTA</h2>
+        <form action="<?php echo FRONT_ROOT . "Pet/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>
-                <th>Dog</th>
-                <th>Service</th>          
+                <th>ANIMAL:</th>
+                <th>NOMBRE:</th>
+                <th>FOTO:</th>
+                <th>RAZA:</th>
+                <th>TAMAÑO:</th>
+                <th>OBSERVACIONES:</th>
+                <th>PLAN DE VACUNAS:</th>
+                <th>VIDEO:</th>      
             </thead>
             <tbody align="center">
               <tr>
                 <td style="max-width: 100px;">
-                  <input type="text" name="dog" required>
+                  <input type="text" name="animal" required>
                 </td>
                 <td>
-                  <input type="text" name="service" required>
+                  <input type="text" name="namePet" required>
                 </td> 
                 <td>
-                  <select name="dog" id="dog" class="select">
-                </td>
+                  <input type="text" name="photo" required>
+                </td> 
                 <td>
-                      <?php
-                        $dogDAO = new DogDAO();
-                        $dogList = $dogDAO->GetAll();
-
-                        foreach($dogList as $dog) {
-                          echo "<option value=". $dog->getIdDog() .">
-                          ". $dog->getNameDog(). "
-                          </option>";
-                        }
-                      ?>
-
-                    </select>
-                </td>                 
+                  <input type="text" name="race" required>
+                </td> 
+                <td>
+                  <input type="text" name="size" required>
+                </td> 
+                <td>
+                  <input type="text" name="observation" required>
+                </td> 
+                <td>
+                  <input type="text" name="video" required>
+                </td>                
               </tr>
               </tbody>
           </table>

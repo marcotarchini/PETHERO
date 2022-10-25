@@ -28,11 +28,6 @@
           <thead>
             <tr>
               <th style="width: 20%;">Nombre</th>
-              <th style="width: 20%;">Apellido</th>
-              <th style="width: 10%">DNI</th>
-              <th style="width: 20%">Email</th>
-              <th style="width: 20%">Direccion</th>
-              <th style="width: 10%">Telefono</th>
             </tr>
           </thead>
           <tbody>
@@ -41,15 +36,10 @@
               foreach($userList as $user) {
           ?>
             <tr>
-                <td><?php echo $user->getNameUser() ?></td>
-                <td><?php echo $user->getLastnameUser() ?></td>
-                <td><?php echo $user->getDni() ?></td>
-                <td><?php echo $user->getEmail() ?></td>
-                <td><?php echo $user->getAddress() ?></td>
-                <td><?php echo $user->getCellphone() ?></td>
-                <td>
-                  <button type="submit" name="email" class="btn" value="<?php echo $user->getEmail() ?>"> Remove </button>
-                  <a href="<?php echo FRONT_ROOT . "user/ShowModifyView/" . $user->getEmail() ?>" class="btn"> Modificar </a>
+                <td><?php echo $user->getUserName() ?></td>
+            <td>
+                  <button type="submit" name="email" class="btn" value="<?php echo $user->getUserName() ?>"> Remove </button>
+                  <a href="<?php echo FRONT_ROOT . "user/ShowModifyView/" . $user->getUserName() ?>" class="btn"> Modificar </a>
                 </td>
               </tr>
           <?php

@@ -26,10 +26,7 @@
                                 </div>
                                 <br>
                                 <br>
-                            </form>  
-                            <div>
-                                    <button type="submit" onclick="<?php echo FRONT_ROOT . "User/ShowAddView"?>" class="btn">NUEVO USUARIO</button>
-                            </div>                     
+                            </form>                     
                     </ul>
                 </li>             
             </ul>

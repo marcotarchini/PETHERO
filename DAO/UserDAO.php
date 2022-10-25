@@ -13,23 +13,35 @@
         public function Add($user) {
             $this->RetrieveData();
 
+            $user->setId($this->GetNextId());
+
             array_push($this->userList, $user);
 
             $this->SaveData();
         }
 
-        public function GetByEmail($email) {
+        public function GetByUser($userName) {
                 $this->RetrieveData();
 
                 $user = null;
 
-                 $aux = array_filter($this->userList, function($user) use ($email) {
-                     return $user->getEmail() === $email;
+                 $aux = array_filter($this->userList, function($user) use ($userName) {
+                     return $user->getUserName() === $userName;
                  });
 
                 $aux= array_values($aux);
 
                 return (count($aux) > 0) ? $aux[0] : null;
+        }
+
+        private function GetNextId() {
+            $id = 0;
+
+            foreach($this->userList as $user) {
+                $id = ($user->getId() > $id) ? $user->getId() : $id;
+            }
+
+            return $id + 1;
         }
 
         private function RetrieveData() {
@@ -41,13 +53,8 @@
 
                 foreach($arrayDecode as $value) {
                     $users = new User();
-                   
-                    $users->setNameUser($value["nameUser"]);
-                    $users->setLastnameUser($value["lastnameUser"]);
-                    $users->setDni($value["dni"]);
-                    $users->setEmail($value["email"]);
-                    $users->setAddress($value["address"]);
-                    $users->setCellphone($value["cellphone"]);
+
+                    $users->setUserName($value["userName"]);
                     $users->setPassword($value["password"]);    
                                     
                     array_push($this->userList, $users);
@@ -60,12 +67,8 @@
 
             foreach($this->userList as $users) {
                 
-                $value["nameUser"] = $users->getNameUser();
-                $value["lastnameUser"] = $users->getLastnameUser();
-                $value["dni"] = $users->getDni();
-                $value["email"] = $users->getEmail();
-                $value["address"] = $users->getAddress();
-                $value["cellphone"] = $users->getCellphone();
+                $value["id"] = $users->getId();
+                $value["userName"] = $users->getUserName();
                 $value["password"] = $users->getPassword();
 
                 array_push($arrayEncode, $value);
@@ -74,11 +77,11 @@
             file_put_contents($this->fileName, $jsonContent);
         }
 
-        public function Remove($email) {
+        public function Remove($id) {
             $this->RetrieveData();
 
-            $this->userList = array_filter($this->userList, function($user) use($email) {
-                return $user->getIdUser() != $emailr;
+            $this->userList = array_filter($this->userList, function($user) use($id) {
+                return $user->getId() != $id;
             });
 
             $this->SaveData();
@@ -87,7 +90,7 @@
         public function Modify($user) {
             $this->RetrieveData();
 
-            $this->Remove($user->getEmail());
+            $this->Remove($user->getUserName());
 
             array_push($this->userList, $user);
 

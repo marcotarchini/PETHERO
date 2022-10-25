@@ -1,14 +1,13 @@
 [
-    {
-        "namePerson":"Mia",
-        "lastnamePerson":"Tarchini",
+    {   
+        "idOwner":"1",
+        "nameOwner":"Mia",
+        "lNameOwner":"Tarchini",
         "dni":"49057349",
         "email":"tarchinimia@gmail.com",
         "address":"F U Camet 2309",
         "cellphone":"2235516999",
-        "idOwner":"1",
-        "passOwner":"1234",
-        "dog":"Grande",
+        "pet":"Grande",
         "service":"1000"
         
     }

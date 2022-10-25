@@ -78,6 +78,7 @@
                 $value["vaccines"] = $pet->getVaccines();
                 $value["observation"] = $pet->getObservation();
                 $value["video"] = $pet->getVideo();
+                $value["owner"] = $pet->getOwner();
                 
                 array_push($arrayEncode, $value);
             }
@@ -94,7 +95,8 @@
 
                 foreach($arrayDecode as $value) {
                     $pet = new Pet();
-                    $pet->getIdpet($value["idPet"]);
+                    
+                    $pet->getIdPet($value["idPet"]);
                     $pet->getAnimal($value["animal"]);
                     $pet->getNamePet($value["namePet"]);
                     $pet->getPhoto($value["photo"]);
@@ -103,6 +105,7 @@
                     $pet->getVaccines($value["vaccines"]);
                     $pet->getObservation($value["observation"]);
                     $pet->getVideo($value["video"]);
+                    $pet->getOwner($value["owner"]);
                                        
                     array_push($this->petList, $pet);
                 }

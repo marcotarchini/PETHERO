@@ -29,37 +29,39 @@ use DAO\PetDAO;
         <form action="<?php echo FRONT_ROOT . "Owner/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>
-                <th>Pet</th>
-                <th>Service</th>          
+                <th>NOMBRE:</th>
+                <th>APELLIDO:</th>
+                <th>DNI:</th>
+                <th>EMAIL:</th>
+                <th>TELEFONO:</th>
+                <th>SERVICIO:</th>          
             </thead>
             <tbody align="center">
               <tr>
                 <td style="max-width: 100px;">
-                  <input type="text" name="pet" required>
+                <input type="text" name="nameOwner" required>
                 </td>
                 <td>
-                  <input type="text" name="service" required>
+                   <input type="text" name="lNameOwner" required>
+                </td>
+                <td>
+                    <input type="text" name="dni" required>
+                </td>  
+                <td>
+                    <input type="text" name="email" required>
                 </td> 
                 <td>
-                  <select name="pet" id="pet" class="select">
-                </td>
+                    <input type="text" name="cellphone" required>
+                </td> 
                 <td>
-                      <?php
-                        $dogDAO = new DogDAO();
-                        $dogList = $dogDAO->GetAll();
-
-                        foreach($dogList as $pet) {
-                          echo "<option value=". $pet->getIdPet() .">
-                          ". $pet->getNameDog(). "
-                          </option>";
-                        }
-                      ?>
-
-                    </select>
-                </td>                 
+                    <input type="text" name="service" required>
+                </td>                              
               </tr>
               </tbody>
           </table>
+                <div>
+                      <button type="button" onclick="<?php echo FRONT_ROOT . "Pet/ShowAddView"?>" class="btn">INGRESE MASCOTA</button>
+                </div>
           <div>
             <input type="submit" class="btn" value="Agregar" style="background-color:#DC8E47;color:white;"/>
           </div>

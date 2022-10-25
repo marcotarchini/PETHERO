@@ -2,8 +2,13 @@
     {
         
         "idKeeper":"1",
-        "passKeeper":"1234",
-        "dogType":"Grande",
+        "nameKeeper":"Marco",
+        "lNameKeeper":"Tarchini",
+        "dni":"29909079",
+        "email":"tarchinimarco@gmail.com",
+        "address":"F U Camet 2309",
+        "cellphone":"2235516482",
+        "petType":"Grande",
         "priceXDay":"1000",
         "score":"25"
     }
