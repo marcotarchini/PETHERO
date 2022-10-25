@@ -43,7 +43,7 @@
 
             $owner = new Owner();
 
-            
+            $ownerUser = $this->userDAO->GetByUser($this->userLogged->getUserName());
             $owner->setNameOwner($nameOwner);
             $owner->setLNameOwner($lNameOwner);
             $owner->setDni($dni);
@@ -59,7 +59,7 @@
             
         }
 
-        publi function AddPet($pet){
+        public function AddPet($pet){
 
         }
 

@@ -41,7 +41,7 @@ use DAO\UserDAO as UserDAO;
                     $this->ShowAddView();
                 }
             }else{
-                $this->Index("Error de mail");
+                $this->Index("Error de usuario");
             }
         }
 

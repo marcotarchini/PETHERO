@@ -54,8 +54,8 @@
                 <td><?php echo $keeper->getPetType() ?></td>
                 <td><?php echo $keeper->getPriceXDay() ?></td>
                 <td>
-                  <button type="submit" name="idKeeper" class="btn" value="<?php echo $keeper->getIdKeeper() ?>"> Remove </button>
-                  <a href="<?php echo FRONT_ROOT . "Keeper/ShowModifyView/" . $keeper->getIdKeeper() ?>" class="btn"> Modify </a>
+                  <button type="submit" name="idKeeper" class="btn" value="<?php echo $keeper->getIdKeeper() ?>"> Borrar </button>
+                  <a href="<?php echo FRONT_ROOT . "Keeper/ShowModifyView/" . $keeper->getIdKeeper() ?>" class="btn"> Modificar </a>
                 </td>
               </tr>
           <?php

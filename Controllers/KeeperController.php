@@ -4,6 +4,8 @@
 
     use DAO\KeeperDAO as KeeperDAO;
     use Models\Keeper as Keeper;
+    use DAO\UserDAO as UserDAO;
+    use Models\User as User;
 
     class KeeperController {
         private $keeperDAO;
@@ -29,7 +31,7 @@
             require_once(VIEWS_PATH . "modify-keeper.php");
         }
 
-        public function Add($nameKeeper,  $lNameOwner, $dni, $email, $address, $cellphone, $petType, $priceXDay, $score) {
+        public function Add($nameKeeper, $lNameOwner, $dni, $email, $address, $cellphone, $petType, $priceXDay, $score) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $keeper = new Keeper();
@@ -57,7 +59,7 @@
             $this->ShowListView();
         }
 
-        public function Modify($nameKeeper,  $lNameOwner, $dni, $email, $address, $cellphone, $petType, $priceXDay, $score) {
+        public function Modify($nameKeeper, $lNameOwner, $dni, $email, $address, $cellphone, $petType, $priceXDay, $score) {
 
             $keeper = new Keeper();
 

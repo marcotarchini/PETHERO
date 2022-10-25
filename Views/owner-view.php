@@ -52,7 +52,7 @@
                 <td><?php echo $owner->getCellphone() ?></td>
                 <td><?php echo $owner->getService() ?></td>
                 <td>
-                  <button type="submit" name="idOwner" class="btn" value="<?php echo $owner->getIdOwner() ?>"> Remove </button>
+                  <button type="submit" name="idOwner" class="btn" value="<?php echo $owner->getIdOwner() ?>"> Borrar </button>
                   <a href="<?php echo FRONT_ROOT . "Owner/ShowModifyView/" . $owner->getIdOwner() ?>" class="btn"> Modificar </a>
                 </td>
               </tr>
@@ -72,6 +72,7 @@
               <th style="width: 30%">Foto</th>
               <th style="width: 10%">Raza</th>
               <th style="width: 10%">Tamaño</th>
+              <th style="width: 10%">Observaciones</th>
               <th style="width: 30%">Plan de vacunas</th>
               <th style="width: 30%">Video</th>
             </tr>

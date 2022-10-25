@@ -9,18 +9,19 @@
         
         private $fileName = ROOT . "/Data/keeper.json";
         private $keeperList = array();
+        private $userLogged = $_SESSION["loggedUser"];
 
         public function Add($keeper) {
             $this->RetrieveData();
 
-            $keeper->setIdKeeper($this->GetNextId());
+            $keeper->setIdKeeper($this->$userLogged->getId());
 
             array_push($this->keeperList, $keeper);
 
             $this->SaveData();
         }
         
-        private function GetNextId() {
+        /*private function GetNextId() {
             $idKeeper = 0;
 
             foreach($this->keeperList as $keeper) {
@@ -28,7 +29,7 @@
             }
 
             return $idKeeper + 1;
-        }
+        }*/
 
         public function Remove($idKeeper) {
             $this->RetrieveData();
@@ -98,7 +99,7 @@
                 $arrayDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
 
                 foreach($arrayDecode as $value) {
-                    $keeper = new keeper();
+                    $keeper = new Keeper();
                     
                     $keeper->setIdKeeper($value["idKeeper"]);
                     $keeper->setNameKeeper($value["nameKeeper"]);

@@ -24,8 +24,8 @@
         <form action="<?php echo FRONT_ROOT . "user/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>
-                <th>NOMBRE:</th>      
-                <th>CONTRASEÑA</th>    
+                <th>USUARIO:</th>      
+                <th>CONTRASEÑA:</th>    
             </thead>
             <tbody align="center">
               <tr>
@@ -42,12 +42,12 @@
             <input type="submit" class="btn" value="Agregar" style="background-color:#DC8E47;color:white;"/>
           </div>
           <div>
-            <?php
+            <?php/*
                 if($message != "") {
                   echo "<div>
                     <p>". $message ."</p>
                   </div>";
-                }
+                }*/
             ?>
           </div>
         </form>

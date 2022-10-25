@@ -4,24 +4,24 @@
 
     use DAO\IOwnerDAO as IOwnerDAO;
     use Models\Owner as Owner;
-    use Models\UserDAO as UserDAO;
 
     class OwnerDAO implements IOwnerDAO {
+        
         private $fileName = ROOT . "/Data/owner.json";
         private $ownerList = array();
-        private $user = new UserDAO;
+        private $userLogged = $_SESSION["loggedUser"];
 
         public function Add($owner) {
             $this->RetrieveData();
 
-            $owner->setIdOwner($this->GetNextId());
+            $owner->setIdOwner($this->$userLogged->getId());
 
             array_push($this->ownerList, $owner);
 
             $this->SaveData();
         }
 
-        private function GetNextId() {
+        /*private function GetNextId() {
             $idOwner = 0;
 
             foreach($this->ownerList as $owner) {
@@ -29,7 +29,7 @@
             }
 
             return $idOwner + 1;
-        }
+        }*/
 
         public function Remove($idOwner) {
             $this->RetrieveData();

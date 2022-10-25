@@ -8,7 +8,7 @@
     class UserDAO implements IUserDAO {
         
         private $fileName = ROOT . "/Data/user.json";
-        private $userList = array();
+        public $userList = array();
 
         public function Add($user) {
             $this->RetrieveData();

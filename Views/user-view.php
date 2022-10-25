@@ -38,7 +38,7 @@
             <tr>
                 <td><?php echo $user->getUserName() ?></td>
             <td>
-                  <button type="submit" name="email" class="btn" value="<?php echo $user->getUserName() ?>"> Remove </button>
+                  <button type="submit" name="userName" class="btn" value="<?php echo $user->getUserName() ?>"> Borrar </button>
                   <a href="<?php echo FRONT_ROOT . "user/ShowModifyView/" . $user->getUserName() ?>" class="btn"> Modificar </a>
                 </td>
               </tr>

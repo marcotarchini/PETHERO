@@ -40,7 +40,7 @@
 
             $user = new User();
 
-            $user->setNameUser($userName);
+            $user->setUserName($userName);
             $user->setPassword($password);
 
             $this->userController->Add($user);
