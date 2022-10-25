@@ -2,34 +2,36 @@
 
     namespace Controllers;
 
+    use Controllers\PetController as PetController;
     use DAO\OwnerDAO as OwnerDAO;
     use Models\Owner as Owner;
     use DAO\PetDAO as PetDAO;
-    use Models\Pet as Pet;
     use DAO\UserDAO as UserDAO;
-    use Models\User as User;
+   
    
 
     class OwnerController {
         private $ownerDAO;
         private $petDAO;
-        private $user;
+        private $userLogged;
+        private $petController;
 
         public function __construct() {
             $this->ownerDAO = new OwnerDAO();
             $this->petDAO = new PetDAO();
-            $this->user = new User();
+            $this->userLogged = $_SESSION["loggedUser"];
+            $this->petController = new PetController();
         }
 
-        public function ShowAddView($message = "") {
+        public function ShowAddView() {
             require_once(VIEWS_PATH . "validate-session.php");
             require_once(VIEWS_PATH . "add-owner.php");
         }
 
         public function ShowView() {
             require_once(VIEWS_PATH . "validate-session.php");
-            $petList = $this->petDAO->GetAll();
             require_once(VIEWS_PATH . "owner-view.php");
+            $petList = $this->petDAO->GetAll();
         }
 
         public function ShowModifyView($idOwner) {
@@ -55,12 +57,8 @@
             $owner->setOwnerUser($ownerUser);
        
                 $this->ownerDAO->Add($owner);
-                $this->ShowListView();
+                $this->petController->ShowAddView();
             
-        }
-
-        public function AddPet($pet){
-
         }
 
         public function Remove($idOwner) {

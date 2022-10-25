@@ -10,7 +10,7 @@ namespace Models;
         private $email;
         private $address;
         private $cellphone;
-        private $petType;
+        private $petSize;
         private $priceXDay;
         private $score;
         private $keeperUser;
@@ -132,6 +132,18 @@ namespace Models;
         public function setKeeperUser($keeperUser)
         {
                 $this->keeperUser = $keeperUser;
+
+                return $this;
+        }
+
+        public function getPetSize()
+        {
+                return $this->petSize;
+        }
+
+        public function setPetSize($petSize)
+        {
+                $this->petSize = $petSize;
 
                 return $this;
         }

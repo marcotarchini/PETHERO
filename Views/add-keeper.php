@@ -52,7 +52,7 @@
                     <input type="text" name="cellphone" required>
                 </td> 
                 <td>
-                    <input type="text" name="petType" required>
+                    <input type="text" name="petSize" required>
                 </td> 
                 <td>
                     <input type="number" name="priceXDay" required>

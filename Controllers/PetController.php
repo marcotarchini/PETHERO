@@ -5,19 +5,22 @@
     use DAO\OwnerDAO as OwnerDAO; 
     use DAO\PetDAO as PetDAO;
     use Models\Pet as Pet;
+    use Controller\OwnerController as OwnerController;
     
 
     class PetController {
         private $ownerDAO;
         private $petDAO;
+        private $ownerController;
 
         public function __construct() {
             $this->ownerDAO = new OwnerDAO();
             $this->petDAO = new PetDAO();
             $this->userLogged = $_SESSION["loggedUser"];
+            $this->ownerController = new OwnerController();
         }
 
-        public function ShowAddView($message = "") {
+        public function ShowAddView() {
             require_once(VIEWS_PATH . "validate-session.php");
             require_once(VIEWS_PATH . "add-pet.php");
         }
@@ -51,7 +54,7 @@
             $pet->setOwner($owner);
                    
                 $this->petDAO->Add($pet);
-                $this->ShowListView();
+                $this->ownerController->ShowView();
             
         }
 

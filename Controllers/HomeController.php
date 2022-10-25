@@ -1,7 +1,7 @@
 <?php
 namespace Controllers;//logica de negocio
 
-//use Controllers\UserController as UserController;
+use Controllers\UserController as UserController;
 use DAO\UserDAO as UserDAO;
 
 

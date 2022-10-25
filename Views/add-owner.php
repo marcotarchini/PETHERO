@@ -1,7 +1,5 @@
 <?php
 
-use DAO\PetDAO;
-
  include('nav-bar.php');
  require_once(VIEWS_PATH . "validate-session.php");
  

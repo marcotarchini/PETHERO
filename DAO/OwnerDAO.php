@@ -6,10 +6,15 @@
     use Models\Owner as Owner;
 
     class OwnerDAO implements IOwnerDAO {
-        
+
         private $fileName = ROOT . "/Data/owner.json";
         private $ownerList = array();
-        private $userLogged = $_SESSION["loggedUser"];
+        private $userLogged;
+
+        public function __construct()
+        {
+            $this->userLogged = $_SESSION["loggedUser"];
+        }
 
         public function Add($owner) {
             $this->RetrieveData();

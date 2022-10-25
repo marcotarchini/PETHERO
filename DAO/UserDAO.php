@@ -52,12 +52,13 @@
                 $arrayDecode = ($jsonContent) ? json_decode($jsonContent, true) : array();
 
                 foreach($arrayDecode as $value) {
-                    $users = new User();
+                    $user = new User();
 
-                    $users->setUserName($value["userName"]);
-                    $users->setPassword($value["password"]);    
+                    $user->setId($value["id"]);
+                    $user->setUserName($value["userName"]);
+                    $user->setPassword($value["password"]);    
                                     
-                    array_push($this->userList, $users);
+                    array_push($this->userList, $user);
                 }
             }
         }
@@ -65,11 +66,11 @@
         private function SaveData() {
             $arrayEncode = array();
 
-            foreach($this->userList as $users) {
+            foreach($this->userList as $user) {
                 
-                $value["id"] = $users->getId();
-                $value["userName"] = $users->getUserName();
-                $value["password"] = $users->getPassword();
+                $value["id"] = $user->getId();
+                $value["userName"] = $user->getUserName();
+                $value["password"] = $user->getPassword();
 
                 array_push($arrayEncode, $value);
             }

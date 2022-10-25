@@ -74,6 +74,7 @@
             $arrayEncode = array();
 
             foreach($this->kepperList as $keeper) {
+
                 $value["idKeeper"] = $keeper->getIdKeeper();
                 $value["nameKeeper"] = $keeper->getNameKeeper();
                 $value["lNameKeeper"] = $keeper->getLNameKeeper();
@@ -81,9 +82,10 @@
                 $value["email"] = $keeper->getEmail();
                 $value["address"] = $keeper->getAddress();
                 $value["cellphone"] = $keeper->getCellphone(); 
-                $value["dogType"] = $keeper->getDogType();
+                $value["petSize"] = $keeper->getPetSize();
                 $value ["priceXDay"] = $keeper->getPriceXDay();
                 $value["score"] = $keeper->getScore();
+                $value["keeperUser"] = $keeper->getKeeperUser();
 
                 array_push($arrayEncode, $value);
             }
@@ -108,9 +110,10 @@
                     $keeper->setEmail($value["email"]);
                     $keeper->setAddress($value["address"]);
                     $keeper->setCellphone($value["cellphone"]);
-                    $keeper->setDogType($value["dogType"]);
+                    $keeper->setPetSize($value["petSize"]);
                     $keeper->setPriceXDay($value["priceXDay"]);
                     $keeper->setScore($value["score"]);
+                    $keeper->setKeeperUser($value["keeperUser"]);
                     
                     array_push($this->keeperList, $keeper);
                 }

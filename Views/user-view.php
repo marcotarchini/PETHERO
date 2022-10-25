@@ -33,7 +33,7 @@
           <tbody>
 
           <?php
-              foreach($userList as $user) {
+              foreach($this->userList as $user) {
           ?>
             <tr>
                 <td><?php echo $user->getUserName() ?></td>
@@ -46,7 +46,8 @@
           }
           ?>
           </tbody>
-        </table></form> 
+        </table>
+      </form> 
       </div>
               <div class="wrapper row4">
                   <main class="hoc container clear"> 
