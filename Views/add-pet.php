@@ -24,7 +24,7 @@
     <div class="content"> 
       <div id="comments" >
         <h2>INGRESE MASCOTA</h2>
-        <form action="<?php echo FRONT_ROOT . "Pet/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
+        <form action="<?php echo FRONT_ROOT . "pet/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>
                 <th>ANIMAL:</th>

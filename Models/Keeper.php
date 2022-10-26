@@ -47,7 +47,7 @@ namespace Models;
     
         public function setScore($score)
         {
-                $this->score = $score;
+                $this->score = 0;
 
                 return $this;
         }

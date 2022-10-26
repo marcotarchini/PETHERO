@@ -36,6 +36,7 @@
               <th style="width: 10%">Telefono</th>
               <th style="width: 10%">Tamaño</th>
               <th style="width: 10%">Precio por dia</th>
+              <th style="width: 10%">Puntuacion</th>
             </tr>
           </thead>
           <tbody>
@@ -53,6 +54,7 @@
                 <td><?php echo $keeper->getCellphone() ?></td>
                 <td><?php echo $keeper->getPetType() ?></td>
                 <td><?php echo $keeper->getPriceXDay() ?></td>
+                <td><?php echo $keeper->getScore() ?></td>
                 <td>
                   <button type="submit" name="idKeeper" class="btn" value="<?php echo $keeper->getIdKeeper() ?>"> Borrar </button>
                   <a href="<?php echo FRONT_ROOT . "Keeper/ShowModifyView/" . $keeper->getIdKeeper() ?>" class="btn"> Modificar </a>

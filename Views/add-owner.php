@@ -57,12 +57,9 @@
               </tr>
               </tbody>
           </table>
-                <div>
-                      <button type="button" onclick="<?php echo FRONT_ROOT . "Pet/ShowAddView"?>" class="btn">INGRESE MASCOTA</button>
-                </div>
-          <div>
-            <input type="submit" class="btn" value="Agregar" style="background-color:#DC8E47;color:white;"/>
-          </div>
+                      <div>
+                          <a href="<?php echo FRONT_ROOT . "Pet/ShowAddView"?>" class="btn" type="submit">INGRESE MASCOTA</a>
+                      </div>     
           <div>
             <?php
                 if($message != "") {

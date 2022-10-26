@@ -8,9 +8,11 @@
 
     class UserController {
         private $userController;
+        private $userDAO;
 
         public function __construct() {
-            $this->userController = new UserDAO();      
+            $this->userController = new UserDAO();
+            $this->userDAO = new UserDAO();      
         }
 
         public function ShowAddView() {
@@ -20,12 +22,13 @@
 
         public function ShowView() {
             require_once(VIEWS_PATH . "validate-session.php");
+            $userList = $this->userController->GetAll();
             require_once(VIEWS_PATH . "user-view.php");
         }
 
         public function ShowModifyView($userName) {
             require_once(VIEWS_PATH . "validate-session.php");
-            $user = $this->userDAO->GetByUser($userName);
+            $user = $this->userController->GetByUser($userName);
             require_once(VIEWS_PATH . "modify-user.php");
         }
 

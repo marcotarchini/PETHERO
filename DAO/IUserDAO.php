@@ -8,5 +8,6 @@
         function GetByUser($userName);
         function Remove($id);
         function Modify(User $user);
+        function GetAll();
     }
 ?>

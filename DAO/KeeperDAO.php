@@ -8,15 +8,21 @@
     class KeeperDAO implements IKeeperDAO {
         
         private $fileName = ROOT . "/Data/keeper.json";
-        private $keeperList = array();
-        private $userLogged = $_SESSION["loggedUser"];
+        private $keeperList;
+        private $userLogged;
+
+        public function __construct()
+        {
+            $this->userLogged = $_SESSION["loggedUser"];
+            $this->keeperList = array();
+        }
 
         public function Add($keeper) {
             $this->RetrieveData();
-
-            $keeper->setIdKeeper($this->$userLogged->getId());
-
+            
             array_push($this->keeperList, $keeper);
+
+            $keeper->setIdKeeper($this->userLogged->getId());
 
             $this->SaveData();
         }
@@ -73,7 +79,7 @@
         private function SaveData() {
             $arrayEncode = array();
 
-            foreach($this->kepperList as $keeper) {
+            foreach($keeperList as $keeper) {
 
                 $value["idKeeper"] = $keeper->getIdKeeper();
                 $value["nameKeeper"] = $keeper->getNameKeeper();
@@ -83,7 +89,7 @@
                 $value["address"] = $keeper->getAddress();
                 $value["cellphone"] = $keeper->getCellphone(); 
                 $value["petSize"] = $keeper->getPetSize();
-                $value ["priceXDay"] = $keeper->getPriceXDay();
+                $value["priceXDay"] = $keeper->getPriceXDay();
                 $value["score"] = $keeper->getScore();
                 $value["keeperUser"] = $keeper->getKeeperUser();
 

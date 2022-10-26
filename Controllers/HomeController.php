@@ -7,10 +7,12 @@ use DAO\UserDAO as UserDAO;
 
     class HomeController    {
         private $userController;
+        private $userDAO;
       
 
         public function __construct() {
-           $this->userController = new UserController();   
+           $this->userController = new UserController(); 
+           $this->userDAO = new UserDAO();  
         }
 
         public function Index($message = "") {
@@ -23,6 +25,7 @@ use DAO\UserDAO as UserDAO;
 
         public function ShowView() {
             require_once(VIEWS_PATH . "validate-session.php");
+            $userList = $this->userDAO->GetAll();
             require_once(VIEWS_PATH . "user-view.php");
         }
 

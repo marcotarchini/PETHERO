@@ -10,10 +10,12 @@
     class KeeperController {
         private $keeperDAO;
         private $userLogged;
+        private $userDAO;
 
         public function __construct() {
             $this->keeperDAO = new KeeperDAO();
             $this->userLogged = $_SESSION["loggedUser"];
+            $this->userDAO = new UserDAO();
         }
 
         public function ShowAddView() {
@@ -33,7 +35,7 @@
             require_once(VIEWS_PATH . "modify-keeper.php");
         }
 
-        public function Add($nameKeeper, $lNameOwner, $dni, $email, $address, $cellphone, $petSize, $priceXDay, $score) {
+        public function Add($nameKeeper, $lNameKeeper, $dni, $email, $address, $cellphone, $petSize, $priceXDay, $score) {
             require_once(VIEWS_PATH . "validate-session.php");
 
             $keeper = new Keeper();
@@ -63,7 +65,7 @@
             $this->ShowListView();
         }
 
-        public function Modify($nameKeeper, $lNameOwner, $dni, $email, $address, $cellphone, $petSize, $priceXDay, $score) {
+        public function Modify($nameKeeper, $lNameKeeper, $dni, $email, $address, $cellphone, $petSize, $priceXDay, $score) {
 
             $keeper = new Keeper();
 

@@ -23,16 +23,18 @@
     <div class="content"> 
       <div id="comments" >
         <h2>INGRESE NUEVO GUARDIAN</h2>
-        <form action="<?php echo FRONT_ROOT . "Keeper/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
+        <form action="<?php echo FRONT_ROOT . "keeper/Add"?>" method="post"  style="background-color: #EAEDED;padding: 2rem !important;">
           <table> 
             <thead>             
                 <th>NOMBRE:</th>
                 <th>APELLIDO:</th>
                 <th>DNI:</th>
                 <th>EMAIL:</th>
+                <th>DIRECCION:</th>
                 <th>TELEFONO:</th>
                 <th>TAMAÑO DE MASCOTA QUE CUIDA:</th>
-                <th>PRECIO POR DIA:</th>           
+                <th>PRECIO POR DIA:</th> 
+                <th>PUNTUACION:</th>           
             </thead>
             <tbody align="center">
               <tr>
@@ -49,6 +51,9 @@
                     <input type="text" name="email" required>
                 </td> 
                 <td>
+                    <input type="text" name="address" required>
+                </td> 
+                <td>
                     <input type="text" name="cellphone" required>
                 </td> 
                 <td>
@@ -56,6 +61,9 @@
                 </td> 
                 <td>
                     <input type="number" name="priceXDay" required>
+                </td> 
+                <td>
+                    <input type="number" name="score" required>
                 </td> 
               </tr>
               </tbody>

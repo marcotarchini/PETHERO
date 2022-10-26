@@ -33,13 +33,13 @@
           <tbody>
 
           <?php
-              foreach($this->userList as $user) {
+              foreach($userList as $user) {
           ?>
             <tr>
                 <td><?php echo $user->getUserName() ?></td>
             <td>
                   <button type="submit" name="userName" class="btn" value="<?php echo $user->getUserName() ?>"> Borrar </button>
-                  <a href="<?php echo FRONT_ROOT . "user/ShowModifyView/" . $user->getUserName() ?>" class="btn"> Modificar </a>
+                  <a href="<?php echo FRONT_ROOT . "User/ShowModifyView/" . $user->getUserName() ?>" class="btn"> Modificar </a>
                 </td>
               </tr>
           <?php
@@ -52,13 +52,13 @@
               <div class="wrapper row4">
                   <main class="hoc container clear"> 
                       <div>
-                          <button type="button" onclick="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>" class="btn">INGRESAR DUEÑO</button>
+                          <a href="<?php echo FRONT_ROOT . "Owner/ShowAddView"?>" class="btn">INGRESAR DUEÑO</a>
                       </div>
                       <div>
-                          <button type="button" onclick="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>" class="btn">INGRESAR GUARDIAN</button>
+                          <a href="<?php echo FRONT_ROOT . "Keeper/ShowAddView"?>" class="btn">INGRESAR GUARDIAN</a>
                       </div>
                       <div>
-                          <button type="button" onclick="<?php echo FRONT_ROOT . "Keeper/ShowListView"?>" class="btn">RESERVA</button>
+                          <a href="<?php echo FRONT_ROOT . "Booking/ShowAddView"?>" class="btn">RESERVA</a>
                       </div>
                   </main>
               </div>

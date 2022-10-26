@@ -26,6 +26,11 @@
             $this->SaveData();
         }
 
+        public function GetAll() {
+            $this->RetrieveData();
+            return $this->ownerList;
+        }
+
         /*private function GetNextId() {
             $idOwner = 0;
 
@@ -54,11 +59,6 @@
             array_push($this->ownerList, $owner);
 
             $this->SaveData();
-        }
-
-        public function GetAll() {
-            $this->RetrieveData();
-            return $this->ownerList;
         }
 
         public function GetById($idOwner) {

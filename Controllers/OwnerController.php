@@ -30,6 +30,7 @@
 
         public function ShowView() {
             require_once(VIEWS_PATH . "validate-session.php");
+            $ownerList = $this->ownerDAO->GetAll();
             require_once(VIEWS_PATH . "owner-view.php");
             $petList = $this->petDAO->GetAll();
         }
